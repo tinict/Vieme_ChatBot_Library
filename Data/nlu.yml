@@ -1,0 +1,1630 @@
+version: "3.1"
+
+nlu:
+  - intent: greet
+    examples: |
+      - hey
+      - hello
+      - hi
+      - hi bro
+      - hello there
+      - good morning
+      - good evening
+      - moin
+      - hey there
+      - let's go
+      - hey dude
+      - goodmorning
+      - goodevening
+      - good afternoon
+      - xin chào
+      - chào bạn
+      - chào bot
+      - xin chào bot
+      - chào buổi sáng bot
+      - chào buổi chiều bot
+      - chào buổi tối bot
+      - có ai ở đó không
+      - có bạn ở đó không
+      - xin chào bạn
+      - có ai đấy không
+      - rất hận hạnh được gặp bot
+      - chào cậu
+      - chào mi
+      - chào mày
+      - chào tớ đi
+      - chào tôi đi bot
+      - có ai đấy không
+      - hallo
+      - xin chào bạn
+      - dạ cô
+      - dạ em chào cô
+      - chào cô ạ
+      - alooo
+      - chào
+      - Morning
+      - Afternoon
+      - Come in
+      - Chào chị
+      - Chào em
+      - Em chào anh ạ
+      - Chào buổi chiều 
+      - Chào buổi sáng
+      - Chào buổi tối
+      - Ê 
+      - Mày ơi
+      - Lâu lắm không gặp
+      - Cháu chào cô ạ
+      - Chào em nhé!
+      - Chào bot nhé
+      - Chào cậu, tớ là sinh viên đại học khoa học
+      - chào bot tôi là sinh viên
+      - chào bạn mình học sinh trường chuyên khoa học
+      - bot ơi
+      - bot có ở nhà không
+      - hân hạnh được biết bạn
+      - hân hạnh được làm quen bạn
+      - mình làm quen nha
+      - rất vui khi được làm quen với bạn
+      - rất vui khi biết được bạn
+      - chào bot nha
+      - bạn tên gì
+      - tên gì
+      - chị tên gì
+      - anh tên gì
+      - tên của bạn là gì
+      - tên của chị là gì
+      - tên của anh là gì
+      - cho mình hỏi tên nhé
+      - mình muốn biết tên bạn
+      - mình muốn tiện xưng hộ hơn, cho mình biết tên nhé
+      - để tiện xưng hộ thì tên bạn là gì
+      - cho em xin tên của anh ạ
+      - cho em xin tên của chị ạ
+      - được biết tên bạn thì tốt nhỉ
+      - vui lòng cho mình biết tên nhé
+      - xin phép hỏi tên của bạn
+      - vậy thì tên bạn là gì
+      - tên bạn trong tiếng việt là gì
+      - bạn có vui lòng cho mình biết tên được không
+      - chúng ta nên biết tên nhau nhỉ?
+      - em tên là gì thế
+      - tên em là gì
+      - tên em
+      - tên bạn
+      - bạn tên là gì
+      - bạn tên gì thế
+      - em tên gì
+      - hey cu
+      - alo cu em
+
+  - intent: goodbye
+    examples: |
+      - cu
+      - good by
+      - cee you later
+      - good night
+      - bye
+      - goodbye
+      - have a nice day
+      - see you around
+      - bye bye
+      - see you later
+      - chào tạm biệt
+      - bye bye
+      - xin tạm biệt
+      - hẹn gặp lại
+      - tạm biệt
+      - chúc một ngày tốt lành
+      - hẹn gặp lại ngày gần nhất
+      - tạm biệt cậu
+      - chào tạm biệt cậu
+      - một ngày tốt lành
+      - xin chào tạm biệt cậu
+      - tạm biệt bạn
+      - Tạm biệt cô
+      - Sớm gặp lại nhé
+      - Hẹn mai gặp nha
+      - Nói chuyện sau nhé
+      - Tạm biệt chú ạ
+      - Hẹn gặp lại chị
+      - tạm biệt bot nhé
+      - hẹn gặp bot lần sau
+
+  - intent: answer_name
+    examples: |
+      - [tôi]{"entity": "cus_sex"} tên là [Nam]{"entity": "user_name"}
+      - [chị]{"entity": "cus_sex"} tên là [Hoa]{"entity": "user_name"}
+      - [anh]{"entity": "cus_sex"} tên là [Long]{"entity": "user_name"}
+      - [mình]{"entity": "cus_sex"} tên là [Phúc]{"entity": "user_name"}
+      - [mình]{"entity": "cus_sex"} tên [Phát]{"entity": "user_name"}
+      - [em]{"entity": "cus_sex"} tên [Hà]{"entity": "user_name"} nhé
+      - Gọi [mình]{"entity": "cus_sex"} là [Phụng]{"entity": "user_name"} nha
+      - Xin chào [tôi]{"entity": "cus_sex"} tên [Châu]{"entity": "user_name"}
+      - Xin chào [chị]{"entity": "cus_sex"} tên [Phương]{"entity": "user_name"}
+      - Xin chào [anh]{"entity": "cus_sex"} tên [Pháp]{"entity": "user_name"}
+      - Xin tự giới thiệu [mình]{"entity": "cus_sex"} tên là [Thành]{"entity": "user_name"}
+      - Chào bạn [mình]{"entity": "cus_sex"} tên là [Tú]{"entity": "user_name"}
+      - Xin tự giới thiệu [mình]{"entity": "cus_sex"} tên là [Hương]{"entity": "user_name"}
+      - Rất vui khi được làm quen bạn [mình]{"entity": "cus_sex"} là [Hương]{"entity": "user_name"}
+
+  - lookup: cus_sex
+    examples: |
+      - tôi
+      - chị
+      - anh
+      - em
+      - mình
+
+  - intent: affirm
+    examples: |
+      - yes
+      - y
+      - indeed
+      - of course
+      - correct
+      - đúng
+      - đúng r
+      - đúng rồi
+      - đúng rồi bạn
+      - tôi đồng ý
+
+  # ý định hỏi chức năng của bot những gì
+  - intent: ask_bot_ho_tro
+    examples: |
+      - bạn có thể giúp được gì cho tôi
+      - bot có thể giúp ích những gì cho tôi
+      - bạn có thể hỗ trợ tôi được những gì
+      - bạn có những chức năng gì
+      - tôi muốn biết các chức năng chi tiết mà bạn có thể hỗ trợ cho tôi
+      - tôi muốn biết thêm thông tin về bạn
+      - bạn có thể giúp tôi được những việc gì
+      - bạn có thể hỗ trợ tôi trong vấn đề thư viện như thế nào
+      - bạn hỗ trợ tôi những công việc gì
+      - công việc bạn có thể làm giúp
+      - những công việc bạn có thể giúp tôi
+      - bạn có thể hỗ trợ những được
+      - bạn giúp tôi được những việc gì
+      - tôi muốn chức năng chi tiết của bạn
+      - bạn giúp tôi ở đâu
+      - bạn có thể hỗ trợ tôi với những công việc cụ thể nào
+      - bạn ơi bạn giúp tôi những công việc nào
+      - tôi muốn biết thêm thông tin về bot
+      - những chức năng bot có thể hỗ trợ
+      - bạn có thể hỗ trợ trong vấn đề thư viện như thế nào
+      - bạn giúp thư viện trong những công việc nào
+      - tính năng bạn có thể giúp
+      - tôi muốn khả năng bạn hỗ trợ tôi
+      - bạn có thể hỗ trợ được những công việc gì
+      - tôi muốn biết chi tiết công việc bạn có thể hỗ trợ
+      - công việc bạn có thể hỗ trợ trong vấn đề thư viện
+      - bot hỗ trợ những nghiệp vụ gì bên trong thư viện
+      - bạn có những tính năng nào có thể giúp thư viện
+      - mình muốn tìm hiểu bot hỗ trợ hay giúp thư viện gồm những tính năng nào
+      - những tính năng bot có thể hỗ trợ cho thư viện
+      - tôi muốn tính năng của bạn trong thư viện
+      - tôi muốn tìm hiểu tính năng của bạn
+      - bạn giúp được gì cho tôi
+      - bạn có thể giúp tôi trong những vấn đề nào
+      - bạn giải quyết những vấn đề nào trong thư viện
+      - tôi muốn biết bạn có thể hỗ trợ những gì
+      - bot hỗ trợ được những gì
+      - bot có giúp được những gì cho tôi
+      - bot có thể làm được những gì
+      - bạn có thể được làm gì
+
+  # ý định tìm sách
+  - intent: ask_tra_cuu_sach
+    examples: |
+      - mình muốn tìm sách [cơ sở toán]{"entity": "name_book"}
+      - thư viện có giáo trình [đại số tuyến tính]{"entity": "name_book"} không
+      - có sách [lập trình phân tán]{"entity": "name_book"} ở thư viện chứ
+      - tôi muốn mượn giáo trình [kinh tế chính trị maclenin]{"entity": "name_book"}
+      - giáo trình [kỹ nghệ phần mềm]{"entity": "name_book"}
+      - bạn ơi cho mình hỏi có [sách thiết kế cơ sở dữ liệu]{"entity": "name_book"} không
+      - tìm sách [kiến trúc máy tính]{"entity": "name_book"}
+      - có giáo trình [nhập môn trí tuệ nhân tạo]{"entity": "name_book"} không
+      - cô ơi cho hỏi có giáo trình [mạng máy tính]{"entity": "name_book"} không ạ
+      - còn giáo trình [văn hóa việt nam đại cương]{"entity": "name_book"} chứ
+      - thư viện còn bao nhiêu [quyển lập trình hướng đối tượng]{"entity": "name_book"}
+      - bot cho hỏi thư viện có sách [java nâng cao]{"entity": "name_book"} không
+      - ê cho tau hỏi thư viện có giáo trình [nhập môn địa chất]{"entity": "name_book"} không
+      - sách [kỹ thuật vẽ nâng cao]{"entity": "name_book"} có ở thư viện không
+      - giáo trình [ngôn ngữ cốt yếu C]{"entity": "name_book"} có trong thư viện không
+      - dạ cô, cho em hỏi có sách [cấu trúc và giải thuật]{"entity": "name_book"} không ạ
+      - cô ơi cho em hỏi thư viện mình có [giáo trình thuyết vũ trụ]{"entity": "name_book"} không ạ
+      - này bot hỏi cái có sách [du hành vũ trụ]{"entity": "name_book"} không
+      - sách [thuyết đa lượng tử]{"entity": "name_book"} có ở thư viện không
+      - ở thư viện có quyển [tuyệt kỹ công phu]{"entity": "name_book"} không
+      - hỏi với có giáo trình [tên người đi lòng đất]{"entity": "name_book"} không
+      - cho mình hỏi có sách [người du hành]{"entity": "name_book"} không
+      - sách [nhân bản]{"entity": "name_book"} có không bot
+      - sách [lập trình c sharp]{"entity": "name_book"} có không
+      - giáo trình [lý luận chính trị]{"entity": "name_book"} có không vậy
+      - thư viện có [quyển bố già và con gái]{"entity": "name_book"} không
+      - sách [con ma đi lạc]{"entity": "name_book"} có không
+      - tìm giúp tôi quyên [người giàu bị mù]{"entity": "name_book"} với
+      - tra cứu tôi quyển [con soi và đàn cừu]{"entity": "name_book"} có không
+      - tìm tôi giáo trình [đại bác và chén cơm]{"entity": "name_book"} có không bot ơi
+      - tìm hộ tôi quyên sách [thanh gươm và ngọn giáo]{"entity": "name_book"}
+      - ủa thư viện có quyển [đại gia và sofa]{"entity": "name_book"} không
+      - vậy cho mình hỏi thư viện có sách [nhà tù và tù nhân]{"entity": "name_book"} không
+      - bot có thể tìm giúp cho tôi quyên [thanh gươm giết quỷ]{"entity": "name_book"}
+      - tìm hộ giáo trình [đại thần]{"entity": "name_book"} với
+      - thế có quyển sách [đại nam và bảo bối]{"entity": "name_book"} không 
+      - có quyển [u mê thuốc lú]{"entity": "name_book"} này không
+      - bạn có giáo trình [phương trời]{"entity": "name_book"} không vậy
+      - tôi đang muốn kiếm sách [cho đi săn]{"entity": "name_book"}
+      - tôi cần tìm sách [công an và tham nhũng]{"entity": "name_book"}
+      - sách [bô và vợ có]{"entity": "name_book"} không
+      - cho tôi hỏi thư viện có sách [huấn hoa hồng]{"entity": "name_book"} không
+      - nhóm của tôi đang cần sách [đại số tuyến tính]{"entity": "name_book"}
+      - tôi cần tìm gấp quyển sách [phác thảo sơ đồ]{"entity": "name_book"} có không
+      - cần tìm quyển [nhật ký vua cha]{"entity": "name_book"}
+      - mình cần sách [giấc ngủ và giấc mơ]{"entity": "name_book"}
+      - không biết có sách [tôi ác và cái chết]{"entity": "name_book"} không vậy
+      - không biết có sách [tội lỗi và thiên thần]{"entity": "name_book"} không ta
+      - cuốn [kỹ năng giao tiếp]{"entity": "name_book"} có không bạn 
+      - tôi cần tìm sách [trí tuệ nhân tạo]{"entity": "name_book"}
+      - thư viện mình có giáo trình của giảng viên [Đoàn Thị Hồng Phước]{"entity": "name_author"} môn [trí tuệ nhân tạo]{"entity": "name_book"} không?
+      - cho mình hỏi sách [trí tuệ nhân tạo]{"entity": "name_book"} của tác giả [Đoàn Thị Hồng Phước]{"entity": "name_author"} không vậy ?
+      - tôi cần tìm sách [cấu trúc dữ liệu và giải thuật]{"entity": "name_book"} của thầy [Trương Công Tuấn]{"entity": "name_author"}
+      - thư viện có giáo trình [vi tích phân hàm một biến]{"entity": "name_book"} thầy [Trương Thế Vinh]{"entity": "name_author"}
+      - tôi đang tìm giáo trình dạy [tiếng anh chuyên ngành]{"entity": "name_book"} của cô [Đào Thị Loan]{"entity": "name_author"}
+      - cho em hỏi giáo trình cô [Mai Hoa]{"entity": "name_author"} dạy bộ môn [luật sở hữu trí tuệ]{"entity": "name_book"}
+      - em đang cần tìm giáo trình [nhập môn lý luận chính trị]{"entity": "name_book"}
+      - không biết ở thư viện mình có giáo trình [đại số học]{"entity": "name_book"} không
+      - cần tìm sách [cương lĩnh đầu tiên của đảng]{"entity": "name_book"} của thầy [Phương Hồng Hạc]{"entity": "name_author"} dạy
+      - tôi muốn tìm sách [nhân lưc và con người]{"entity": "name_book"} của thầy [Hà Trong Đại]{"entity": "name_author"}
+      - tìm sách [chiếc lá cuối cung]{"entity": "name_book"} của tác giả [oston toi]{"entity": "name_author"}
+      - cần tìm sách của thầy [trương công tuấn]{"entity": "name_author"}
+      - tôi muốn mượn sách của thầy [Lê Hoang Phương]{"entity": "name_author"}
+      - tôi đang tìm giáo trình [vi tích phân hàm một biến]{"entity": "name_book"}
+      - tôi cần sách [tâm lý học]{"entity": "name_book"} của giảng viên [Phạm Tiến Sĩ]{"entity": "name_author"} đang giảng dạy
+      - tôi đang tìm giáo trinh [nhập môn trí tuệ nhân tạo]{"entity": "name_book"} của thầy [Lương]{"entity": "name_author"} đang giảng dạy
+      - sách nhập môn [congfu]{"entity": "name_book"} của thầy [Duy Minh Trí]{"entity": "name_author"} có không
+      - cần tìm sách của thầy [trương công tuấn]{"entity": "name_author"}
+      - cần tìm sách của cô [Đoàn Hồng Phước]{"entity": "name_author"}
+      - bot ơi tôi cần tìm giáo trình [vũ trụ học]{"entity": "name_book"} của giáo sư [mac zu cu ber]{"entity": "name_author"}
+      - thư viện có sách [lập trình nâng cao]{"entity": "name_book"} của thầy [thủy]{"entity": "name_author"} ko
+      - thư viện có sách [java nâng cao]{"entity": "name_book"} của thầy thủy không
+
+  # ý định nhờ giúp đỡ
+  - intent: ask_help
+    examples: |
+      - bạn có thể giúp được tôi không ?
+      - bot có thể giúp tôi được không ?
+      - có thể giúp tôi được không tôi có việc cần hỏi
+      - dạ cho em hỏi
+      - dạ cô cho em hỏi với ạ
+      - tôi có việc cần hỏi
+      - tôi cần sự trợ giúp
+      - tôi cần hỏi một số việc
+      - bạn có thể giải đáp một số thắc mắc của tôi được không
+      - em đang có một số thắc mắc về thư viện cần giải đáp
+      - dạ em đang cần sự giải về vấn đề thư viện
+      - bạn có thể giải đáp một số thắc mắc của mình về vấn đề liên quan đến thư viện được không
+      - tôi đang có một số vấn đề liên quan đến thư viện cần giải đáp
+      - tối đang thắc mắc những vấn đề về thư viện
+      - không biết bạn có rãnh để giúp mình giải quyết một số thắc mắc được không
+      - tôi đang cần lời giải đáp
+      - bot ơi tôi có thể hỏi một số câu hỏi được không
+      - tôi đang có một số câu hỏi thắc mắc
+      - tôi muốn đang cần sự giúp đỡ
+      - bot có thể hỗ trợ tôi được không
+      - tôi muốn bot giải đáp một số thắc mắc
+      - bot có thể giúp tôi được không
+      - tôi đăng cần hỏi một số vấn đề càn bot
+      - dạ cho em hỏi một số vấn đề liên quan đến thư viện được không ạ
+      - tôi đang có một số vấn đề cần được giải đáp
+      - tôi đang có một số câu hỏi liên quan đến thư viện
+      - bạn có thể giúp tôi giải đáp thắc mắc về thư viện được không
+      - cần sự giúp đỡ
+      - tôi đang cần giúp
+      - bạn ơi tôi đang có điều muốn hỏi
+      - có ai ở đó không giúp tôi với
+      - bot giúp tôi một chuyện với
+      - bot cho tôi hỏi cái này với
+      - bot có thể hỗ trợ mình trong vấn đề này được không
+      - làm phiền tôi muốn hỏi
+      - tôi có thể hỏi bạn được không
+      - bạn có thể giúp cho tôi được không
+      - tôi muốn hỏi bạn một xí
+      - tôi có câu hỏi muốn hỏi bạn
+      - hỗ trợ
+
+  #ý định hỏi mượn sách
+  - intent: ask_muon_sach
+    examples: |
+      - tôi muốn mượn sách thư viện
+      - bạn ơi tôi có thể mượn sách thư viện không
+      - bạn tôi muốn mượn sách
+      - bạn giúp tối với, tôi muốn mượn sách
+      - bot tôi muốn mượn sách
+      - cho em hỏi em muốn mượn sách
+      - mượn sách
+      - tôi muốn mượn tài liệu
+      - vậy được mượn những sách nào
+      - vậy liệu tôi có thể mượn sách thư viện được không
+      - tôi muốn mượn sách thư viện
+      - dạ cho em hỏi mượn sách
+      - cho em mượn sách với ạ
+      - thư viện mình có sách nào cho em mượn với ạ
+      - cho em hỏi mượn sách thư viện với ạ
+      - em muốn mượn sách thư viện
+      - cho em mượn sách với
+      - mượn sách với bot
+      - bot có thể cho tôi mượn sách
+      - có thể cho tôi mượn sách
+      - thư viện có sách nào cho tôi mượn với
+      - tôi muốn mượn sách từ thư viện được không ạ
+      - bạn ơi cho mình hỏi tôi muốn mượn sách
+      - dạ cô cho em mượn sách với ạ
+      - dạ em muốn sách từ thư viện
+      - có ai ở đó không tôi muốn mượn sách
+      - tớ muốn mượn sách từ thư viện
+      - cậu ơi tớ mượn sách
+      - minh đang muốn mượn sách
+      - bot đi đâu rồi tôi muốn sách từ thư viện
+      - bạn ơi mình muốn mượn sách
+      - tôi có thể mượn sách từ thư viện được không bot
+      - tôi muốn có sách từ thư viện
+      - tôi muốn chọn một quyển sách từ thư viện để mượn
+      - tôi muốn mượn giáo trình
+      - tôi muốn mượn giáo trình từ thư viện
+      - có giáo trình ở đó không cho tôi mượn
+      - tôi mướn mượn giáo để đọc
+      - cho tôi mượn quyển giáo trình với
+      - tôi muốn mượn tài liệu nước ngoài đọc
+      - tôi muốn muốn mượn các bài báo khoa học từ thư viện
+      - tôi muốn tham khảo sách đang có ý định mượn từ thư viện
+      - cho tớ mượn sách sách với
+
+  #ý định hỏi quy trình hay cách mượn sách
+  - intent: ask_quy_trinh_muon_sach
+    examples: |
+      - bạn có thể hướng đãn tôi quy trình mượn sách được không
+      - quy trình mượn sách như thế nào
+      - làm thế nào để tôi đăng ký mượn sách
+      - làm cách nào để đăng ký mượn sách trong thư viện
+      - quy trình để đăng ký mượn sách trong thư viện như thế nào
+      - cách nào để đăng ký mượn sách trong thư viện
+      - bạn ơi cho mình hỏi làm cách nào để đăng ký mượn sách
+      - quy trình đăng ký mượn sách
+      - có cách nào đăng ký mượn sách vậy
+      - cách nào đăng ký mượn sách vậy ạ
+      - dạ cho em hỏi làm thế nào để đăng ký mượn sách vậy ạ
+      - dạ cô cho em hỏi cách đăng ký mượn sách trong thư viện trường của mình với ạ
+      - quy trình đăng ký mượn sách trong thư viện mình
+      - bot cho mình hỏi quy trình đăng ký mượn sách
+      - làm thế nào để đăng ký mượn sách
+      - để mượn sách phải làm thế nào
+      - làm cách nào để đăng ký mượn sách
+      - sách được trong thư viện được đăng ký như thế nào vậy ạ
+      - tôi muốn biết quy trình đăng ký mượn sách
+      - cho tôi biết thêm quy trình đăng ký mượn sách 
+      - tôi đang có quyển sách cần đăng ký mượn sách như thế nào
+      - vậy tối có quyển đang cần đăng ký mượn giờ phải làm như thế nào
+      - tôi đang muốn đăng ký mượn một quyển sách
+      - tôi đang có quyển sách toán cần đăng ký mượn bạn hướng đẫn tôi đăng ký với
+      - bot ơi hướng dẫn tôi cách đăng ký với
+      - làm thế nào để đăng ký mượn từ thư viện vậy bot
+      - làm như thế nào để có thể đăng ký mượn sách vậy
+      - bot làm như nào để đăng ký mượn sách từ thư viện vậy
+      - quy trình để mượn sách từ thư viện
+      - tớ muốn biết quy trình mượn sách
+      - mình muốn biết quy trình mượn sách
+      - có ai đó không có thể hướng dẫn tôi quy trình mượn sách với
+      - tôi đang muốn tìm hiểu quy trình mượn sách
+      - quy trình mượn sách từ thư viện như thế nào
+      - quy trình mượn sách
+      - qui trình mượn sách từ thư viện trường
+      - cách thức có thể mượn sách từ thư viện 
+      - cách thức có thể mượn sách
+      - các bước có thể mượn sách từ thư viện
+      - cách nào có thể mượn sách từ thư viện trường
+      - nội dung các bước có thể mượn sách từ thư viện
+      - các bước thực hiện mượn sách từ thư viện
+      - bot tôi mướn được hướng dẫn các bước đăng ký mượn sách từ thư viện
+      - tôi muốn cậu hướng dẫn tớ các bước đăng ký mượn sách
+      - quy trình mượn sách từ thư viện
+
+  # ý định confirm
+  - intent: ask_confirm_quy_dang_ky_muon_sach
+    examples: |
+      - tôi muốn đăng online nha
+      - online được bot
+      - vậy đăng ký online đi bot ơi
+      - cho tôi đăng ký online
+      - online bot
+      - online
+      - bot cho tôi đăng ký online
+      - tôi đăng ký online được
+      - bạn tôi đăng ký online
+      - bạn cho tôi đăng ký online được
+      - đăng ký online
+      - bạn ơi online nha
+      - online nha
+      - vậy online đi bot ơi
+      - online đi
+      - online cho nhanh bot
+      - nhác đi lên thư viện chắc online
+      - okay online đi bot
+      - chắc online đi
+      - online nha bot
+      - cho mình online đi
+      - cho tôi online
+      - rứa online cho nhanh
+
+  # hỏi vị trí của thư viện
+  - intent: ask_vị_tri_thu_vien
+    examples: |
+      - cho mình hỏi vị trí của thư viện mình nằm ở đâu ạ
+      - bạn cho mình hỏi vị trí của thư viện
+      - vị trí của thư viện nằm ở đâu vậy
+      - thư viện của trường nằm ở dãy nhà nào vậy ạ
+      - phòng thư viện của trường ở đâu
+      - thư viện trường ở đâu
+      - vị trí của thư viện ở đâu
+      - cho tối biết vị trí của thư viện trường ở đâu
+      - dạ cho em hỏi thư viện trường của mình nằm ở đâu
+      - bot cho mình hỏi thư viện trường của mình đang nằm ở đâu
+      - có thể cho tôi biết vị trị của thư viện trường đang nằm ở đâu được không
+      - hãy chỉ ra vị trí của thư viện trường
+      - hãy cho tôi biết vị trí của thư viện trường
+      - bot ơi tôi đang cần tìm vị trí của thư viện trường
+      - thư viện trường nằm ở đâu
+      - vị trí của thư viện đang nằm ở đâu
+      - thư viện nằm ở vị trí nào trong trường
+      - hãy chỉ ra cho tôi vị trí của thư viện trường
+      - thư viện trường đang nằm ở đâu
+      - bạn ơi cho tôi biết thư viện trương đang nằm ở đâu
+      - thế vị trí của thư viện trường đang nằm ở đâu
+      - tôi muốn biết vị trí của thư viện trường
+      - làm ơn cho tôi biết vị trí của thư viện trường
+      - thế bạn biết thư viện của trường mình đang nằm ở đâu không
+      - có biết thư viện trường mình đang nằm ở đâu không
+      - hãy cho tôi biết vị của dãy nhà của thư viện trường
+      - hãy cho tôi biết nơi mượn sách của thư viện
+      - mình đang cần tìm vị trí để sách của trường
+      - tôi đang cần tìm vị trí mượn sách 
+      - tôi đang cần vị trí của thư viện
+      - nơi cho mượn sách đọc của trường
+      - vị trí nơi cho mượn sách giáo trình
+      - tôi đang cần biết vị trí thư viện của đại học khoa học
+      - tôi muốn tìm vị trí của thư viện trong trường đại học khoa học
+      - vị trí thư viện của đại học khoa học
+      - thư viện đang ở vị trí nào trong trường đại học khoa học
+      - thế vị của thư viện trong trường đại học khoa học
+      - thư viện được đặt ở đâu trong trường
+      - vị trí của thư viện được đặt
+      - vị trí của thư viện đang đặt trong nhà trường
+      - vị trí thư viện của đại học khoa học
+      - thư viện nằm ở đâu vậy
+      - muốn mượn sách thì mượn ở đâu
+      - chỗ để mượn sách
+      - vị trí mượn giáo trình
+      - chỗ để cho sinh viên mượn giáo trình
+      - tôi muốn mượn sách phải đến đâu để mượn
+      - tôi cần mượn sách thì phải tìm đến đâu
+      - bot biết thư viện ở đâu không
+      - cậu biết thư viện ở đâu không
+      - cậu cho tôi biết vị trí thư viện
+      - tớ cho tôi biết vị trí thư viện
+
+  # ý định vị trí phòng đọc
+  - intent: ask_phong_doc_sach
+    examples: |
+      - tôi không biết trường chúng ta có phòng đọc không
+      - bạn có cho tôi biết trường mình có phòng đọc sách không
+      - phòng đọc sách của thư viện trường mình có không
+      - thư viện có phòng đọc riêng không
+      - phòng đọc sách dành cho sinh viên có không
+      - thư viện ngoài mượn sách có phòng đọc sách không
+      - chỗ yên tĩnh của trường nằm ở đâu
+      - cho tôi biết trường chúng ta có cung cấp phòng đọc sách cho sinh viên không
+      - tại đại học khoa huế có phòng đọc sách không
+      - có phòng đọc sách tách biệt với thư viện không
+      - vậy thư viện có xây dựng phòng đọc không
+      - trong thư viện có phòng đọc không
+      - cho mình hỏi phòng đọc có không vậy
+      - tại trường mình có phòng đọc sách riêng không vậy
+      - trong trường có phòng đọc sách không vậy ta
+      - cần tìm phòng đọc sách
+      - tôi không biết vị trí phòng đọc
+      - tôi đang cần tìm phòng đọc sách
+      - vị trí phòng đọc sách
+      - cho tôi biêt vị trí phòng đọc sách trong thư viện
+      - cậu biết phòng đọc ở đâu không
+      - cậu cho tôi biết vị trí phòng đọc
+      - tớ cho tôi biết vị trí phòng đọc
+      - cần tìm chỗ yên tĩnh để đọc sách
+      - vị trí của phòng đọc ở đâu
+      - cho tối biết vị trí của phòng đọc trường ở đâu
+      - dạ cho em hỏi phòng đọc trường của mình nằm ở đâu
+      - bot cho mình hỏi phòng đọc trường của mình đang nằm ở đâu
+      - có thể cho tôi biết vị trị của phòng đọc trường đang nằm ở đâu được không
+      - hãy chỉ ra vị trí của phòng đọc trường
+      - hãy cho tôi biết vị trí của phòng đọc trường
+      - bot ơi tôi đang cần tìm vị trí của phòng đọc trường
+      - phòng đọc trường nằm ở đâu
+      - vị trí của phòng đọc đang nằm ở đâu
+      - phòng đọc nằm ở vị trí nào trong trường
+      - hãy chỉ ra cho tôi vị trí của phòng đọc trường
+      - phòng đọc trường đang nằm ở đâu
+      - bạn ơi cho tôi biết phòng đọc trương đang nằm ở đâu
+      - thế vị trí của phòng đọc trường đang nằm ở đâu
+      - tôi muốn biết vị trí của phòng đọc trường
+
+  # ý định đóng cửa
+  - intent: ask_gio_dong_cua
+    examples: |
+      - giờ đóng cửa
+      - giờ ngừng hoạt động
+      - khi nào thư viện ngừng hoạt động?
+      - khi nào thư viện đóng cửa?
+      - cho mình hỏi giờ đóng cửa của thư viện?
+      - bây giờ thư viện có đóng cửa không?
+      - thư viện đóng cửa vào giờ nào
+      - chính xác thời gian thư viện đóng cửa
+      - thời gian kết thúc hoạt động của thư viện
+      - thời nghỉ của thư viện
+      - thời gian ngưng hoạt động của thư viện
+      - tôi muốn biết thời gian nhân viên thư viện nghỉ 
+      - thời gian thư viện không làm việc nữa
+      - thời gian nghỉ ngời của thư viện
+      - thời gian đóng của thư viện
+      - đóng cửa vào khoảng thời gian nào
+      - thư viện đống cửa vào khoảng thời gian
+      - bạn cho mình hỏi thời gian thư viện đóng cửa
+      - bot ơi cho mình hỏi thời gian thư viện đóng cửa
+      - cung cấp cho tối biết thời gian đóng cửa của thư viện
+      - khung giờ đóng của thư viện
+      - khoảng thời gian thư viện đóng cửa
+      - giờ đóng cửa là vào lúc nào
+      - giờ đóng cửa thư viện là vào lúc nào
+      - vào lúc nào là giờ thư viện đóng cửa
+      - giờ ngừng hoạt động
+      - giờ thư viện ngừng hoạt động
+      - khi nào thư viện ngừng hoạt động?
+      - khi nào ngừng hoạt động?
+      - khi nào thư viện đóng cửa?
+      - khi nào đóng cửa?
+      - cho mình hỏi giờ đóng cửa của thư viện?
+      - tôi muốn hỏi giờ đóng cửa của thư viện?
+      - bây giờ thư viện có đóng cửa không?
+      - cho tôi hỏi giờ nào không được vào thư viện
+      - cho tôi hỏi giờ nào không được vào mượn sách
+      - tôi cần biết giờ thư viện đóng cửa
+      - tôi cần biết giờ thư viện ngừng hoạt động
+      - giờ nào thì thư viện ngừng hoạt động
+      - giờ nào thì thư viện không hoạt động
+      - giờ nào thì thư viện đóng cửa
+      - giờ nào thì thư viện sẽ đóng cửa
+      - mấy giờ thư viện đóng cửa
+      - mấy giờ thư viện ngừng hoạt động
+      - mấy giờ thì tôi không thể vào thư viện
+      - mấy giờ là thư viện ngừng mở cửa
+      - mấy giờ thì thư viện ngừng mở cửa
+      - bao giờ thư viện đóng cửa
+      - bao giờ thư viện ngừng hoạt động
+      - bao giờ tôi không thể vào mượn sách
+      - bao giờ thì thư viện đóng cửa
+      - mấy giờ thư viện đóng cửa vậy bạn
+      - mấy giờ thư viện ngừng mở cửa vậy
+      - mấy giờ thì không được vào thư viện
+      - mấy giờ thì không được vào mượn sách
+      - thư viện ngừng mở cửa từ mấy giờ
+      - thư viện đóng cửa vào lúc nào
+      - thư viện ngừng hoạt động vào lúc nào
+      - lúc nào thư viện đóng cửa
+      - giờ nào thư viện sẽ đóng cửa
+      - giờ nào thư viện sẽ ngừng hoạt động
+
+  # ý định mở cửa
+  - intent: ask_gio_mo_cua
+    examples: |
+      - giờ mở cửa
+      - giờ mở cửa thư viện
+      - giờ hoạt động?
+      - giờ thư viện hoạt động?
+      - khi nào thư viện hoạt động?
+      - khi nào thư viện mở cửa?
+      - khi nào mở cửa?
+      - cho mình hỏi giờ mở cửa của thư viện?
+      - cho mình hỏi giờ mở cửa?
+      - bây giờ thư viện có mở cửa không?
+      - bây giờ tôi muốn vào thư viện có được không?
+      - tôi có thể mượn sách vào giờ nào?
+      - cho tôi hỏi giờ nào được vào thư viện
+      - cho tôi hỏi giờ nào được vào mượn sách
+      - tôi cần biết giờ thư viện mở cửa
+      - tôi cần biết giờ thư viện hoạt động
+      - giờ nào thì thư viện hoạt động
+      - giờ nào thì thư viện còn hoạt động
+      - giờ nào thì thư viện mở cửa
+      - giờ nào thì thư viện còn mở cửa
+      - mấy giờ thư viện mở cửa
+      - mấy giờ thư viện hoạt động
+      - mấy giờ tôi có thể vào thư viện
+      - mấy giờ là thư viện còn mở cửa
+      - mấy giờ thì thư viện còn mở cửa
+      - bao giờ thư viện mở cửa
+      - bao giờ thư viện hoạt động
+      - bao giờ tôi có thể vào mượn sách
+      - bao giờ thì thư viện mở cửa
+      - mấy giờ thư viện mở cửa vậy bạn
+      - mấy giờ thư viện mở cửa vậy
+      - mấy giờ thì được vào thư viện
+      - mấy giờ thì được vào mượn sách
+      - thư viện mở cửa đến mấy giờ
+      - thư viện hoạt động đến mấy giờ
+      - thư viện mở cửa vào lúc nào
+      - lúc nào thư viện mở cửa
+      - giờ nào thư viện sẽ mở cửa
+      - giờ nào thư viện sẽ hoạt động
+
+  # ý định câu hỏi về quy đinh của thư viện như nào khi mất sách
+
+  - intent: ask_lam_mat_sach
+    examples: |
+      - tôi mất sách rồi phải làm thế nào
+      - tôi bi mất sách rồi bot ơi
+      - phải xử lý thế nào khi mất sách
+      - quy định như thế nào với trường hợp mất sách
+      - cách xử lý đối với những người làm mất sách
+      - trong quá trình mượn sách tôi đã làm mât sách
+      - làm sao để đền bù cho việc mất sách
+      - đền bù như thế nào đối với trường hợp mất sách
+      - mượn sách nhưng tôi đã làm mất rồi 
+      - bị mất sách thì tôi phải đền bù như thế nào
+      - thư viện quy định như thế nào về việc mất sách
+      - sách bị mất thì phải xử lý như thế nào vậy bot
+      - chế tài xử lý như theeos nào đối với trường hợp mất sách
+      - tôi mới mượn sách và đã bị mất làm thế nào đây bot ơi
+      - tôi muốn đền bù cho việc đã làm mất sách
+      - cho mình hỏi việc làm mất sách phải đền bù như thế nào
+      - mất sách rồi bot, phải làm sao đây bot ơi
+      - phải đền bù như thế nào nếu làm mất sách vậy
+      - có quy chế bồi thường như thế nào cho việc làm mất sách
+      - phải bồi thường như thế nào cho việc làm mất sách
+      - Nếu bị mất sách thì phải làm các thủ tục gì để tiếp tục được mượn sách
+      - Nếu tôi làm hư hỏng sách, hoặc làm mất sách thì phải bồi thường theo mức nào 
+      - Theo Nội quy thư viện thì việc đền sách mất là như thế nào
+      - Với các trường hợp quá hạn sách hoặc mất sách, phải hoàn tất các thủ tục theo quy định nào
+      - Nếu quá hạn sách hoặc mất sách thì phải làm thế nào
+      - Trường hợp tài liệu mượn bị mất hoặc hư hỏng, phải bồi thường theo nội quy của Thư viện như thế nào
+      - việc mất sách thì có cần phải đền bù gì không
+      - tôi mất sách rồi làm sao đây
+      - tôi bị mất sách
+      - cứu với bot tôi làm mất sách
+      - lỡ mất sau thì sao đây bot
+      - mấy sách rồi làm sao đây
+      - nếu bị mất sách giờ phải làm sao
+      - mất sách xử lý sao bot
+      - sách tôi mượn bị mất rồi
+
+  # ý định đối tượng sử dụng
+
+  - intent: ask_doi_tuong_su_dung
+    examples: |
+      - ai có thể sử dụng
+      - ai sử dụng
+      - ai có thể dùng?
+      - ai có thể sử dụng thư viện này
+      - ai được mượn sách tại thư viện
+      - ai được phép vào thư viện
+      - ai có thể dùng thư viện này?
+      - đối tượng sủ dụng thư viện này là ai?
+      - đối tượng sử dụng
+      - tôi có được phép vào thư viện không
+      - anh chị em tôi có thể sử dụng thư viện không
+      - người khác có thể sử dụng thư viện không
+      - tôi cần biết đối tượng được sử dụng thư viện
+      - đối tượng có thể sử dụng thư viện này là những ai
+      - đối tượng có thể sử dụng thư viện này gồm những ai
+      - ai là người có thể sử dụng thư viện này
+      - người có thể sử dụng thư viện này là ai
+      - người có thể sử dụng thư viện này là những ai
+      - thư viện này có thể được sử dụng bởi những ai
+      - thư viện này có những đối tượng sử dụng là những ai
+      - người ngoài trường có thể sử dụng thư viện không
+      - Cán bộ trường có được dùng thư viện không
+      - Sinh viên trong trường có được sử dụng thư viện không
+      - Các thầy cô giáo trong trường có được sử dụng thư viện này không
+      - Người nào được sử dụng thư viện
+      - Sinh viên ngoài trường có được sử dụng thư viện không
+      - sinh viên nào được sử dụng thư viện
+      - tôi cần sử dụng thư viện
+      - tôi có được sử dụng thư viện trường không
+      - mình có được sử dụng thư viện trường không
+      - cho mình hỏi ai được vào thư viện
+      - cho mình hỏi ai được phép vào thư viện
+      - cho mình hỏi ai được sử dụng thư viện
+      - bây giờ thì ai được sử dụng thư viện này
+      - bây giờ thì những ai được sử dụng thư viện này
+      - những người nào có thể vào thư viện
+      - những thành phần nào được vào thư viện
+      - có những ai được phép ra vào thư viện
+      - có những ai vào thư viện
+      - thư viện cho phép những người nào vào
+      - sinh viên được phép vào thư viện không
+      - học sinh khối chuyên được phép vào thư viện không
+      - thư viện giành cho đối tượng nào
+      - sinh viên hay học sinh có phải đối tượng vào thư viện không
+      - trường cho phép ai vào thư viện
+      - các trường hợp nào được vào thư viện
+      - mình muốn vào ra vào thư viện được không
+      - tôi cần biết thông tin sinh viên ra vào thư viện
+      - những ai được phép đi vào thư viện
+      - thư viện ai cũng ra vào phải không
+      - thư viện ra vào gồm những đối tượng nào
+      - sinh viên khối chuyên được phép sử dụng thư viện không 
+      - tôi được phép vào thư viện không nhỉ
+      - nếu tôi là sinh viên của trường có được phép vào thư viện không vậy
+      - vậy nếu là sinh viên có được vào thư viện không
+
+  # ý định hỏi thông tin liên hệ
+
+  - intent: ask_thong_tin_lien_he
+    examples: |
+      - thông tin liên hệ
+      - thông tin liên lạc
+      - làm thế nào để liên lạc với cán bộ thư viện?
+      - làm thế nào để liên lạc với thủ thư?
+      - cho mình xin số điện thoại của cán bộ thư viện?
+      - cho mình xin email của thư viện?
+      - làm thế nào để có thể liên hệ với cán bộ thư viện?
+      - làm thế nào để có thể liên hệ với thư viện?
+      - làm thế nào để có thể liên hệ với thủ thư?
+      - mình muốn biết thêm về thông tin liên lạc của thư viện
+      - số điện thoại thư viện là gì?
+      - mình xin số điện thoại thư viện để liên hệ
+      - email liên lạc liên hệ thư viện là gì vậy?
+      - mình có một số thắc mắc muốn hỏi
+      - mình cần được giải đáp thắc mắc
+      - mình cần được giải đáp trực tiếp
+      - liên hệ cách nào vậy?
+      - cho mình hỏi số điện thoại ở thư viện
+      - bây giờ liên lạc với thủ thư bằng cách nào
+      - bây giờ liên hệ với thủ thư bằng cách nào
+      - bây giờ liên lạc bằng cách nào
+      - bây giờ liên hệ bằng cách nào
+      - bây giờ liên hệ với thư viện bằng cách nào
+      - mình muốn được giải đáp thắc mắc
+      - mình có thắc mắc muốn hỏi
+      - cho mình xin thông tin liên lạc với thư viện
+      - cho mình xin infor liên lạc
+      - cho mình xin infor liên hệ
+      - tôi muốn gửi email
+      - tôi muốn gửi mail
+      - tôi cần gọi đến thư viện
+      - gọi như thế nào
+      - tôi cần gọi
+      - tôi cần biết địa chỉ mail thư viện
+      - tôi cần biết địa chỉ email thư viện
+      - làm thế nào để có được thông tin liên hệ thư viện
+      - cho thông tin liên hệ thư viện
+      - vậy bạn có thông tin liên hệ thư viện không
+      - bot ơi tôi cần thông thông liên hệ với thư viện
+      - cho tôi thông tiên liên hệ thư viện
+      - bot cho tôi hỏi thông tin liên hệ với thư viện
+      - bạn ơi cho tôi thông tin liên hệ thư viện nào
+      - dạ cô cho em xin cách thức liên hệ
+      - tôi muốn liên hệ người thủ thư
+      - tôi muốn liên lạc với thư viện
+      - tôi mong muốn liên lạc với thư viện trường
+      - trường mình có thông tin liên lạc không
+      - tôi cần liên lạc với thư viện gấp giúp tôi
+      - thư viện có thông tin liên lạc không ?
+      - cho tôi xin info thư viện
+      - bạn bot ơi cho tôi xin info thư viện
+      - tôi cần lấy info thư viện
+      - không biết trường có info không cho tôi xin
+      - bạn ơi cho tôi biết info thư viện với
+
+  # ý định hỏi cơ cấu thư viện
+  - intent: ask_co_cau_to_chuc
+    examples: |
+      - thư viện có [tổ chức]{"entity": "struct"} như thế nào?
+      - các [chức danh]{"entity": "struct"} trong thư viện?
+      - các [cấp bậc]{"entity": "struct"} trong thư viện?
+      - [cơ cấu tổ chức]{"entity": "struct"} của thư viện gồm những [bộ phận]{"entity": "struct"} nào?
+      - thư viện bao gồm những ai?
+      - thư viện có những ai
+      - ai quản lý thư viện
+      - [cơ cấu quản lý]{"entity": "struct"} của thư viện
+      - cho tôi hỏi [người quản lý]{"entity": "struct"} thư viện là ai
+      - cho mình hỏi [người quản lý]{"entity": "struct"} thư viện
+      - mình cần thông tin [người quản lý]{"entity": "struct"} thư viện
+      - cho mình hỏi các [chức vụ]{"entity": "struct"} trong thư viện
+      - [ban lãnh đạo]{"entity": "struct"} thư viện là ai
+      - những ai làm việc trong thư viện
+      - tôi muốn hỏi những ai làm việc ở thư viện
+      - những người nào làm việc trong thư viện
+      - những [người quản lý]{"entity": "struct"} và [vận hành]{"entity": "struct"} thư viện là ai
+      - các [chức vụ]{"entity": "struct"} trong thư viện
+      - các [chức danh]{"entity": "struct"} trong thư viện
+      - ai là [người đứng đầu]{"entity": "struct"} thư viện
+      - người [đứng đầu]{"entity": "struct"} thư viện là ai
+      - [Giám đốc]{"entity": "struct"} thư viện là ai
+      - những [người điều hành]{"entity": "struct"} thư viện gồm những ai
+      - những [người điều hành]{"entity": "struct"} thư viện
+      - đố bot biết [cơ cấu]{"entity": "struct"} thư viện
+      - cho mình [thông tin cơ cấu]{"entity": "struct"} thư viện
+      - bạn biết [cơ cấu]{"entity": "struct"} thư viện trường không
+      - [cơ cấu nhân sự]{"entity": "struct"} thư viện
+      - bot ơi cho mình biết thêm [cơ cấu]{"entity": "struct"} thư viện
+      - cho mình thông tin [cơ cấu]{"entity": "struct"} của thư viện như thế nào
+      - cho tôi biết thông tin [cơ cấu]{"entity": "struct"} của thư viện
+      - [cơ cấu]{"entity": "struct"} của thư viện như thế nào
+      - bot cho tôi biết [cơ cấu]{"entity": "struct"} thư viện được không
+      - [cơ cấu]{"entity": "struct"} của thư viện bot biết không
+      - thông tin [cơ cấu]{"entity": "struct"} thư viện bot biết không
+      - tôi cần một số ít thông tin về [cơ cấu]{"entity": "struct"} của thư viện
+      - xin bot cho tôi biết [cơ cấu]{"entity": "struct"} của thư viện
+      - hãy cho tôi ít thông tin của [cơ cấu]{"entity": "struct"} thư viện
+      - [cơ cấu]{"entity": "struct"} thư viện cho tôi thông tin
+      - trường [cơ cấu nhân viên]{"entity": "struct"} thư viện như thế nào
+      - cho tớ biết [cơ cấu]{"entity": "struct"} thư viện trường
+      - cho mình [cơ cấu]{"entity": "struct"} của thư viện trường
+      - cách [tổ chức nhân sự]{"entity": "struct"} của thư viện như thế nào
+      - cách [tổ chức nhân viên]{"entity": "struct"} của thư viện
+      - thư viện [cơ cấu nhân viên]{"entity": "struct"} như nào
+      - [cơ cấu tổ chức cơ bản]{"entity": "struct"} của thư viện
+      - hãy cho tôi thông tin về [cơ cấu tổ chức]{"entity": "struct"} thư viện trường
+      - thông tin cơ bản về [cơ cấu tổ chức]{"entity": "struct"} thư viện
+      - [cơ cấu tổ chức nhân sự]{"entity": "struct"} của thư viện
+      - [tổ chức cơ cấu nhân sự] của thư viện như thế nào
+      - [cơ cấu tổ nhân sự]{"entity": "struct"}
+
+  - lookup: struct
+    examples: |
+      - tổ chức
+      - chức danh
+      - cấp bậc
+      - bộ phận
+      - cơ cấu quản lý
+      - cơ cấu tổ chức
+      - người quản lý
+      - chức vụ
+      - ban lãnh đạo
+      - vận hành
+      - người đứng đầu
+      - đứng đầu
+      - Giám đốc
+      - người điều hành
+      - cơ cấu
+      - thông tin cơ cấu
+      - cơ cấu nhân sự
+      - cơ cấu nhân viên
+      - tổ chức nhân sự
+      - tổ chức nhân viên
+      - cơ cấu tổ chức cơ bản
+      - tổ chức cơ cấu nhân sự
+
+  # ý định hỏi quy định của thư viện
+  - intent: ask_quy_dinh_thu_vien
+    examples: |
+      - một số quy định của thư viện
+      - một số quy định
+      - tôi muốn biết về quy định của thư viện
+      - bot ơi tôi muốn về quy định của thư viện
+      - cho tôi biết về quy định của thư viện
+      - cho tôi biết thông tin về quy định của thư viện
+      - vậy thư viện của trường mình có thư viện không vậy
+      - quy định thư viện trường
+      - thông chi tiết quy định
+      - cho tối biêt quy định hay nội quy của thư viện
+      - thư viện có nội quy như thế nào
+      - cái quy đinh hay quy tắc đề ra của thư viện như thế nào
+      - tôi muốn tìm hiểu quy định của thư viện
+      - dạ cho em biết về quy định của thư viện
+      - trời ơi cho tôi biết về quy định của thư viện
+      - thư viện có những cái nội quy gì
+      - nội quy của thư viện được đề ra sao
+      - những quy tắc của thư viện
+      - thông tin về quy định
+      - quy tắc và quy định đặc ra cho thư viện
+      - những quy tắc đặc ra trong thư viện
+      - cho tôi chi tiết về quy định hay nội quy thư viện
+      - nội quy thư viện là gì
+      - nội quy bên trong thư viện là gì
+      - nội quy của thư viện là
+      - nội quy thư viện
+      - cho biết nội quy thư viện
+      - thông tin nội quy thư viện
+      - thông tin nội quy
+      - tôi muốn biết nội quy
+      - cho tôi biết nội quy 
+      - cho tôi thông tin về nội quy
+
+  # ý định câu hỏi về có quy đinh hay không ?
+  - intent: ask_help_quy_dinh
+    examples: |
+      - cho mình hỏi thư viện có quy định hay nội quy không
+      - thư viện có nội quy không
+      - cho tôi biết thư viện có nội quy không
+      - vậy thư viện của trường có nội quy không
+      - trong thư viện có đặc ra nội quy không
+      - trường có đặc ra nội quy trong thư viện không
+      - bạn ơi cho biết nội quy có trong thư viện không
+      - ủa, thư viện có nội quy không
+      - tôi cần biết thư viện có nội quy không
+      - thư viện có xây dựng nội quy không
+      - những nội dung hay quy tắc của thư viện có được xây dựng không
+      - như vậy trong thư viện của trường có nôi quy không
+      - những quy tắc trong thư viện có hay không
+
+  #ý định hỏi những đều cấm của thư viện
+  - intent: ask_deu_cam
+    examples: |
+      - cho mình hỏi những đều cấm của thư viện
+      - vậy mình có được phép photo tài liệu của thư viện không
+      - tôi có được xóa hay viết bậy lên sách
+      - cho tôi biết những điều thư viện nghiêm cấm
+      - bạn có thể cho tôi biết những cấm tuyệt đối của thư viện
+      - luật cấm của thư viện
+      - tôi có được mang súng vào thư viện không
+      - tôi có được mang dao vào thư viện không
+      - tôi có thể mang vũ khí vào thư viện không
+      - tôi có được mang đồ uống thức ăn vào thư viện không
+      - tôi có được viết vẽ tẩy xóa lên sách không
+      - có được phép ghi vẽ bậy lên bàn ghế thiết bị của thư viện hay không
+      - tôi có quyền gây bẻ gãy hay thay đổi thiết kế của thư viện không
+      - tôi có quyền lấy vật dụng thư viện hay không
+      - tôi có quyền nói lớn trong thư viện không
+      - tôi có được hút thuốc trong thư viện không
+      - tôi có được phép mang thức ăn vào thư viện hay không
+      - tôi có được phép sử dụng chất cấm trong thư viện không
+      - tôi có đươc có thể mang chất kích thích vào thư viện hay không
+      - chất kích thích có được phép mang vào thư viện
+      - có được ăn nói lớn tiếng trong thư viện
+      - có được đánh bài trong thư viện
+      - có được tụ tập gây ồn ào trong thư viện
+      - có được hút thuộc bên trong thư viện
+      - có được nằm ngủ bên trong thư viện
+
+  # ý định mượn sách về nhà
+  - intent: ask_muon_sach_ve_nha
+    examples: |
+      - có tài liệu nào mượn được ở thư viện cho phép đem về nhà bạn
+      - loại sách nào cũng được mượn về nhà đúng không ?
+      - sách nào không được mượn về
+      - các loại sách nào được mượn về nhà
+      - mình muốn mượn sách về nhà
+      - kho tài liệu tiếng nước ngoài được đem về nhà không ?
+      - thư viện có cho phép bạn đọc mượn sách về nhà không?
+      - những tài liệu nào có thể mượn về nhà
+      - tôi muốn mượn sách đem về nhà được không
+      - bạn ơi cho mình hỏi tôi muốn mượn sách đem về nhà
+      - mượn sách đem về nhà
+      - cho mình hỏi với tôi muốn mượn sách đem về nhà
+      - tôi có được phép đem sách về nhà không
+      - tôi có thể lấy sách đem về nhà được không
+      - bot cho tôi hỏi tôi muốn đem sách về nhà
+      - mình muốn lấy sách của thư viện đem về nhà đọc
+      - thư viện có cho đem sách về không vậy
+      - sách ở thư viện có được phép đem về nhà
+      - sách bên trong thư viện có được phép đem về nhà
+      - thế sách trong thư viện đem về nhà được không
+      - tôi đang đọc dở nữa chừng muốn đem sách về nhà đọc tiếp được không
+      - tôi muốn đem sách về nhà đọc tiếp được không
+      - bot cho mình hỏi thư viện có cho đem sách về nhà không
+      - tôi muốn xem tiếp sách mình đang đọc vậy có được phép đem về nhà không
+      - thế thư viện trường có thể đem sách về nhà đọc không
+      - thư viện có cho đem tài liệu thư viện về nhà không
+      - sách, báo, tài liệu có được phép đem về không
+      - sách được phép đem về nhà không
+      - tài liệu được phép đem khỏi thư viện không
+      - những tài liệu và sách của thư viện đêm phép đem về nhà không
+      - có thể đem những sách đó mượn đem về nhà không
+      - tôi có thể mượn sách, báo, tài liệu đem về nhà không
+      - bạn có thể cho mình biết sách báo cho phép đem về nhà không
+      - sách nước ngoài tôi có thể mượn đem về được không
+      - sách giáo trình tôi có thể mượn đem về nhà được không
+      - tôi muốn mượn quyển sách giáo trình đem về nhà được không
+      - tôi muốn mượn sách nước ngoài đem về được không
+      - tôi có thể mượn sách tiếng nước ngoài đem về nhà được không
+      - những tài liệu nào được phép cho đem về nhà
+      - những tài liệu nào được thư viện cho đem về nhà
+      - loại sách được thư viện cho phép đem về nhà
+      - những loại sách được thư viện cho phép đem về nhà
+      - các quyển sách được thư viện cho phép đem về nhà
+      - loại sách được phép đem về nhà 
+      - sách được phép cho mượn về nhà
+      - giáo trình được phép mượn về nhà
+      - sách có thể mang về nhà đọc
+      - sách có thể đem về nhà đọc
+      - những loại sách có thể được thư viện cho đem về nhà
+      - tôi có thể lấy những loại sách nào đem về nhà
+      - những sách được lấy mang về nhà đọc từ thư viện
+
+  # ý định về mức phí mượn sách
+  - intent: ask_muc_phi_muon_sach
+    examples: |
+      - Mượn sách có tốn phí không ?
+      - Mức phí của mượn sách ?
+      - Sách được mượn có tốn phí không ?
+      - Phí mượn sách như thế nào ?
+      - Có tốn tiền mượn sách không ?
+      - Bot có tốn phí mượn không ?
+      - Bạn cho mình hỏi thư viện có thu phí mượn sách không ?
+      - Sách mượn có tính phí không ?
+      - Mượn sách không tính phí phải không ?
+      - Sách mượn miễn phí phải không ?
+      - mượn sách bao nhiêu tiền vậy ?
+
+  # ý định hỏi thời gian mượn sách
+  - intent: ask_thoi_gian_muon_sach
+    examples: |
+      - Mình có thể mượn sách trong bao lâu ?
+      - Thời gian mượn sách như thế nào ?
+      - Cho mình hỏi mình có thể mượn sách trong bao lâu ?
+      - Thời gian mượn sách tính từ lúc nào ?
+      - Sách tôi có thể mượn bao lâu ?
+      - Bao lâu thì hết hạn trả sách ?
+      - Khi nào thì quá hạn trả sách ?
+      - Khoảng thời gian mình có thể mượn sách ?
+      - Thời gian mượn sách như thế nào ?
+      - Thời gian tối thiểu để mượn sách ?
+      - Thời gian mượn sách tổi thiểu ?
+
+  # ý định trả sách
+  - intent: ask_tra_sach
+    examples: |
+      - tôi muốn trả sách thì làm thế nào
+      - quy trình trả sách như thế nào vậy bot ơi
+      - quy định như thế nào về việc trả sách
+      - tài liệu đọc xong thì có thể trả cho ai và như thế nào
+      - cần những yêu cầu gì khi trả sách
+      - cần chuẩn bị giấy tờ gi không khi trả sách
+      - hãy cho tôi biết về quy đinh trả sách như thế nào
+      - thư viện quy định như thế nào về việc trả sách
+      - trả sách cần chuẩn bị những thủ tực gì trước không bot ơi
+      - nếu muốn trả sách thì cần chuẩn bị nhũng gì
+      - tôi muốn trả sách thì phải làm sao
+      - muốn trả sách thì cần phải làm gì
+      - tôi đọc sách xong rồi thì phải làm sao
+      - quy trình trả sách diễn ra như thế nào 
+      - bạn có thể trình bày về quy tắc trả sách được không
+      - hãy trình bày về quy trình trả sách
+      - trả sách thì phải trả cho ai
+      - hãy liệt kê về quy trình trả sách cho tôi
+      - sách đã mượn muốn trả sách thì làm thế nào
+      - khi trả sách có cần đem theo thẻ thư viện hay không
+      - trả sách phải cần thông qua những quy trình nào
+      - cho mình hỏi cách trả sách diễn ra như thế nào vậy
+      - bot ơi cho mình hỏi cách trả sách như nào vậy
+      - trả sách có cần có quy tắc gì không bot ơi
+      - làm thế nào để hoàn thành việc trả sách
+      - có quy tắc gì về việc trả sách không bot
+      - có những công đoạn nào để hoàn thành việc trả sách
+      - trả sách cần có những gì vậy bot ơi
+      - lúc nào thì cần trả sách vậy bot ơi
+      - muốn trả sách thì mình phải đưa tài liệu cho ai vậy
+      - những đối tượng mà mình phải trả sách là ai
+      - mình cần phải đưa sách cho ai khi muốn trả sách
+      - mình có thể trả sách giùm bạn được không
+
+  # ý định hỏi vể lĩnh vực cụ thể
+  - intent: ask_danh_muc
+    examples: |
+      - tôi muốn hỏi trường mình có danh mục những [bài báo khoa học tiếng nước ngoài]{"entity": "category_name"} không
+      - bạn ơi cho mình hỏi trường mình có danh mục [bài báo khoa học tiếng nước ngoài]{"entity": "category_name"} không vậy
+      - tôi cần tìm danh mục [bài báo khoa học tiếng nước ngoài]{"entity": "category_name"}
+      - dạ cô cho em hỏi với em cần tìm [bài báo khoa học tiếng nước ngoài]{"entity": "category_name"}
+      - bot cho tôi hỏi, tôi cần tìm những [bài báo tiếng nước ngoài]{"entity": "category_name"}
+      - tôi cần tìm những [bài báo khoa học]{"entity": "category_name"} thuộc bằng [tiếng nước ngoài]{"entity": "category_name"}
+      - thư viện mình có những [bài báo khoa học]{"entity": "category_name"} thuộc [tiếng nước ngoài]{"entity": "category_name"} không vậy
+      - minh đang cần tim những [bài báo]{"entity": "category_name"} thuộc danh mục [tiếng nước ngoài] giúp mình với
+      - không biết trường mình có những [bài báo khoa học]{"entity": "category_name"} viết bằng [tiếng nước ngoài]{"entity": "category_name"} không
+      - tôi muốn tìm những [bài báo khoa học tiếng nước ngoài]{"entity": "category_name"}
+      - bot giúp tôi tìm những [bài báo khoa học tiếng nước ngoài]{"entity": "category_name"}
+      - cho mình hỏi thư viện trường có danh mục [bài báo khoa học tiếng nước ngoài]{"entity": "category_name"} không
+      - vậy những [bài báo khoa học tiếng nước ngoài]{"entity": "category_name"} có thuộc thư viện mình không 
+      - thư viện trường mình có chứa những [bài báo tiếng nước ngoài]{"entity": "category_name"} không vậy ta
+      - trong kho dữ liệu thư viện có tư liệu về [bài báo tiếng nước ngoài]{"entity": "category_name"} không
+      - tôi đang cần tài liệu tham khảo [khoa học tiếng nước ngoài]{"entity": "category_name"}
+      - tôi chuẩn bị bảo đồ án tốt nghiệp cần gấp những danh mục [bài báo khoa học tiếng nước ngoài]{"entity": "category_name"}
+      - danh mục [bài báo khoa học tiếng nước ngoài]{"entity": "category_name"}
+      - tôi đang rất cần tài liệu về những [bài báo khoa học tiếng nước ngoài]{"entity": "category_name"}
+      - tôi muốn hỏi trường mình có danh mục những [luận án tiến sĩ]{"entity": "category_name"} không
+      - bạn ơi cho mình hỏi trường mình có danh mục [luận án tiến sĩ]{"entity": "category_name"} không vậy
+      - tôi cần tìm danh mục [luận án tiến sĩ]{"entity": "category_name"}
+      - dạ cô cho em hỏi với em cần tìm [luận án tiến sĩ]{"entity": "category_name"}
+      - bot cho tôi hỏi, tôi cần tìm những [luận án tiến sĩ]{"entity": "category_name"}
+      - tôi cần tìm những [luận án tiến sĩ]{"entity": "category_name"}
+      - thư viện mình có những [luận án tiến sĩ]{"entity": "category_name"}
+      - minh đang cần tim những [luận án tiến sĩ]{"entity": "category_name"}
+      - không biết trường mình có những [luận án tiến sĩ]{"entity": "category_name"}
+      - tôi muốn tìm những [luận án tiến sĩ]{"entity": "category_name"}
+      - bot giúp tôi tìm những [luận án tiến sĩ]{"entity": "category_name"}
+      - cho mình hỏi thư viện trường có danh mục [luận án tiến sĩ]{"entity": "category_name"} không
+      - vậy những [luận án tiến sĩ]{"entity": "category_name"} có thuộc thư viện mình không 
+      - thư viện trường mình có chứa những [luận án tiến sĩ]{"entity": "category_name"} không vậy ta
+      - trong kho dữ liệu thư viện có tư liệu về [luận án tiến sĩ]{"entity": "category_name"} không
+      - tôi đang cần tài liệu tham khảo [luận án tiến sĩ]{"entity": "category_name"}
+      - tôi chuẩn bị bảo đồ án tốt nghiệp cần gấp những danh mục [luận án tiến sĩ]{"entity": "category_name"}
+      - danh mục [luận án tiến sĩ]{"entity": "category_name"}
+      - tôi đang rất cần tài liệu về những [luận án tiến sĩ]{"entity": "category_name"}
+
+  - lookup: category_name
+    examples: |
+      - bài báo khoa học tiếng nước ngoài
+      - bài báo tiếng nước ngoài
+      - bài báo khoa học
+      - tiếng nước ngoài
+      - bài báo
+      - khoa học
+      - bài báo khoa học tiếng việt
+      - đề tài nckh
+      - luận án tiến sĩ
+      - luận văn thạc sĩ
+      - bài luận tiến sĩ
+      - bài luận thạc sĩ
+      - bài luận
+
+  # Hỏi về quá thời hạn mượn sách
+  - intent: ask_qua_thoi_han_tra_sach
+    examples: |
+      - khi quá thời hạn trả sách thì bị gì không
+      - tôi quá thời hạn trả sách rồi bot ơi
+      - việc quá thời hạn có bị gì không
+      - làm gì khi quá thời hạn trả sách
+      - sách khi quá hạn thì phải làm gì
+      - có bị phạt gì khi quá thời hạn trả sách không
+      - quy định của thư viện như thế nào đối với trường hợp quá hạn trả sách
+      - quá thời hạn trả sách có bị phạt hay không
+      - tôi đã quạ hạn trả sách như vậy có bị phạt gì không
+      - tôi vô tình quên trả sách nên đã bị quá hạn vậy có bị phạt gì không bot ơi
+      - quá hạn trả sách đã 1 ngày vậy có bị phạt gì không
+      - Nếu để quá hạn trả sẽ bị phạt như thế nào?
+      - xữ lý như thế nào đối với trường hợp quá hạn trả sách
+      - Cách tính sách trễ hạn khi quá hạn sách
+      - số tiền phạt được trình như thế nào khi quá hạn
+      - Giữ sách quá hạn bạn đọc phải thanh toán lệ phí quá hạn như thế nào
+      - để biết số tiền cần phải đóng khi quá hạn thì tính như thế nào
+      - việc quá hạn phải thanh toán các khoản phí như thế nào
+      - việc trả sách quá thời hạn có bị gì không
+      - cho mình hỏi sau khi quá hạn trả sách thì có bị phạt gì không
+      - việc nộp phí như nào khi quá hạn trả sách
+      - khi quá hạn thì có bị phạt gì không bot ơi
+      - bot ơi cho mình hỏi việc quá hạn thì sẽ bị phạt như thế nào
+      - sau khi mượn sách và không trả trước thời hạn thì bị phạt như thế nào
+      - quá hạn trả sách rồi bot ơi phải nộp phạt như thế nào vậy
+      - sách mình mượn đã quá hạn 1 ngày thì bị làm sao không
+      - nếu trường hợp tôi quá hạn thì tôi phải sao
+      - việc quá hạn trả sách thì quy định cua thư việc xử lý như thế nào
+      - quá hạn sách thì phải làm sao đay bot ơi
+      - quá trình xử lý đối với trường hợp quá hạn diễn ra như thế nào
+      - thư viện có thể cho em biết em phải thành toán bao nhiêu khi quá hạn 3 ngày được không ạ
+  
+# Hỏi về gia hạn mượn sách
+  - intent: ask_gia_han_tra_sach
+    examples: |
+      - mình muốn gia hạn sách thì phải làm thế nào
+      - làm thế nào đề gia hạn trả sách
+      - quy trình gia hạn sách diễn ra như thế nào
+      - tôi có thể gia hạn được bao nhiêu lần
+      - việc gia hạn có thể thực hiện tối đa bao nhiêu lần
+      - bạn đọc có thế gia hạn như thế nào
+      - gia hạn như thế nào đối với sách 
+      - tôi muốn gia hạn cho sách tôi đang đọc
+      - sách tôi đọc chưa xong tôi có thể gia hạn được không
+      - hãy cho tôi biết quy trình gia hạn sách
+      - một người có thể gia hạn sách bao nhiêu lần
+      - số lần có thể gia hạn khi mượn sách
+      - sách đọc không kịp thì làm thế nào
+      - sách chưa đọc xong những đã đến hạn trả sách thì làm thế nào
+      - muốn đọc sách nhưng không đủ thời gian thì làm thế nào
+      - gia hạn bao nhiêu lần chỗ một cuốn sách
+      - sắp đến hạn trả sách nhưng tôi đọc chưa kịp thì làm thế nào
+      - muốn gia hạn sách tôi phải liên hệ với ai
+      - một cuốn sách được gia hạn bao nhiêu lần
+      - đọc không kịp thì có thể gia hạn được không
+      - gia hạn thì có cần tuân thủ quy tắc gì không
+      - việc gia hạn quá giới hạn có bị gì không
+      - khi chưa đọc xong tài liệu thì có thể gia hạn không
+      - sách đọc trong thời gian gia hạn nhưng vẫn chưa đọc xong thì phải làm gì
+      - đọc sách không kịp thì phải làm gì
+      - không có quá nhiều thời gian đọc thì phải làm gì
+      - gia hạn có thể được diễn ra bao nhiêu lần
+      - có thể gia hạn sách được không bot ơi
+      - cho mình hỏi có thể gia hạn được không
+      - quy đinh như thế nào về việc gia hạn sách
+      - thư viện có quy chế gì về việc gia hạn sách
+      - quy định về gia hạn sách là như thê nào
+  
+  - intent: nlu_fallback
+    examples: |
+      - 00000000000000
+      - tuuuuuu0000000000
+      - 000273865166000
+      - 0000231
+      - 123456789
+      - 12345678910
+      - 1234567890
+      - Wie fange ich mit Rasa an?
+      - hilf mir beim start
+      - tschüssikowski
+      - ¿Qué pasa?
+      - ça va ?
+      - como te llamas
+      - wer bist Du?
+      - como inicio en rasa
+      - come stai?
+      - como estas
+      - de donde eres
+      - de que lugar eres?
+      - epdi iruka
+      - eres humana
+      - kalhmera sara ti kaneis
+      - kannst du auch deutsch?
+      - kannst du dies auch auf deutsch?
+      - oui je besoine de l'aide
+      - que puedes hacer?
+      - tu parles francais?
+      - tudo bom
+      - tu pagal
+      - kannst du mir helfen
+      - tu kaisi he
+
+  - intent: out_of_scope/other
+    examples: |
+      - I am asking you an out of scope question
+      - 4 + 2 = ?
+      - After registration I see that I have an available balance of 0.00000000. What does this balance represent?
+      - Are you ready?
+      - But you're an english site :(
+      - Can I ask you questions first?
+      - Can I die
+      - Can I get a hamburger?
+      - Can YouTube talk?
+      - Can you call me back ?
+      - Can you give me your datacenter's password
+      - Can you give me your datacenter's password?
+      - Can you make sandwiches?
+      - Can you please send me an uber
+      - Do I have to accept?
+      - Have we met before?
+      - HomeBase is advertised as a community. Is there a way to interact with other members of the community?
+      - How long does it take to set up a Rasa bot?
+      - I already told you! I'm a shitmuncher
+      - I am User
+      - I am an opioid addic
+      - I am an opioid addict
+      - I am hungry
+      - I am trying to build one, and did some research before, but I have not do hand-on work yet
+      - I can barely see this white text on light gray background ...
+      - I changed my mind
+      - I have installed it
+      - I ned a GP in 94301
+      - I need a GP in 94301
+      - I need a girl friend!
+      - I need to eat cake
+      - I wan to buy a plane
+      - I wanna marry you
+      - I want a new laptop
+      - I want book a hotel
+      - I want french cuisine
+      - I want pizza
+      - I want to die
+      - I want to order pizza
+      - I want to use pipe
+      - I will check
+      - I'm a shitmuncher
+      - Is Rasa really smart?
+      - Is this Goal-Oriented Chatbot?
+      - Is today saturday?
+      - Mail me the guide
+      - Make me a sandwich
+      - NLW
+      - Nice name
+      - Now?
+      - Pizza bot
+      - Recharge
+      - SEL ME SOMETHING
+      - The Try it out is not working
+      - The weather is good
+      - Today
+      - Try it out broken
+      - What day is it today?
+      - What did you eat yesterday?
+      - What do you prefer?
+      - What is todays date
+      - What is your hobbies?
+      - What makes you better than a human?
+      - What's 1 + 1?
+      - What's do YouTube do
+      - What's your backend system?
+      - Where am I right now?
+      - Where am I?
+      - Who ?
+      - Who are your customers
+      - Why is my TRUST score set to 50 after I completed the registration process?
+      - Won't you ask me how I am?
+      - You'r blue.
+      - a tamed mouse will arrive at your doorstep in the next couple of days
+      - aRE YOU SINGLE
+      - again?
+      - alexa, order 5 tons of natrium chloride
+      - and make chicken noises into the phone
+      - are the newsletter worth the subscription?
+      - are u facebook
+      - are u, facebook?
+      - are you single?
+      - are you dev?
+      - are you russian?
+      - are you sick
+      - are you vegan
+      - better than you
+      - book a ticket
+      - but I just told you that :(
+      - but if rasa is open source why do you have a sales team
+      - buy one please
+      - buy groceries
+      - call me father
+      - can we keep chatting?
+      - can you book dinner
+      - can you cheer me up
+      - can you cook dinner
+      - can you give me a cup of coffee
+      - can you help me with the docs?
+      - can you help me with your docs
+      - can you help me with your docs?
+      - can you learn from our conversation?
+      - can you speak about politic ?
+      - can you understand ?
+      - cannot see
+      - chgfhgh
+      - chinese ok?
+      - colder
+      - common, just try
+      - connect to alexa
+      - cr
+      - custom service
+      - did i break you
+      - dinner
+      - do you believe in god?
+      - do you have a phone number?
+      - do you have your photo?
+      - do you know me
+      - do you know ras
+      - do you liek cheese?
+      - do you like football
+      - do you like movies
+      - do you sell vacuum robots?
+      - do you want to marry me?
+      - docs
+      - doctor
+      - everything
+      - example of a chatbot
+      - genocide
+      - get me a club mate
+      - give me a girl friend
+      - give me food
+      - go back
+      - google?
+      - great, I'd like to buy a house
+      - hang on let me find it
+      - help with my life
+      - hey little mama let em whisper in your ear
+      - hey, I contacted you a couple of days ago but didn't get any response, any news?
+      - how
+      - how about NYC
+      - how are the kids
+      - how can i get them?
+      - how can i test this
+      - how come you say ok ?
+      - how do you learn
+      - how good is Rasa
+      - how it compares to alexa
+      - how long have you been online?
+      - how long will the next version will launch?
+      - how many lines of codes
+      - how much is 10 + 89 ?
+      - how much is 10 + 89
+      - how to get rasa studio
+      - how to go to newyork ?
+      - i am hungry
+      - i am hungry, what should i do?
+      - i am not a developer but need this for business
+      - i am qq
+      - i can't deal with _your_ request
+      - i do not care how are you
+      - i hope you will be better
+      - i immediately need help with implementing the coolest bot you can imagine
+      - i m looking for job
+      - i told you already
+      - i wanna party
+      - i want a non dripping ice cream
+      - i want caffe
+      - i want food
+      - i want good flycam
+      - i want more of you in my life!
+      - i want pizza
+      - i want pizza!!
+      - i want to book a hotel
+      - i want to buy a roomba for my grandson
+      - i want to eat
+      - i want to find new friends
+      - i want to find out what you can build with rasa
+      - i want to fly
+      - i want to grab lunch
+      - i want to know current situtation in pakistan
+      - i want to order a pizza
+      - i want to see your happy customers
+      - i will tame a mouse for you
+      - is it a wasteland full of broken robot parts?
+      - is it allow to
+      - is rasa a studio?
+      - is rasa any good
+      - is that any of your business
+      - isn't the newsletter just spam?
+      - it's a pity
+      - license
+      - ljljl
+      - lunch
+      - lunch??
+      - machine learning
+      - mail me the steps
+      - mascot means?
+      - more
+      - mountain
+      - my name k
+      - no wait go back i want a dripping ice cream but a cone that catches it so you can drink the ice cream later
+      - offer me lunch
+      - oh my god, not again!
+      - oh wait i gave you my work email address can i change it?
+      - ok one then
+      - on wiche nlp based system are you build?
+      - only that?
+      - order good
+      - order pizza
+      - personal or work?
+      - pizza
+      - please help with my ice cream it's dripping
+      - please hjave lunchj
+      - please hurry, i have deadline in two weeks to deliver the bot it is for very big company
+      - please play music
+      - rasa topics
+      - really? you're so touchy?
+      - refresh
+      - region with no. of records
+      - remember my name
+      - search wikipedia
+      - shitmuncher
+      - show me a picture of a chicken
+      - silly bot
+      - sing me a song
+      - so, I'm helping right now to training you?
+      - some thing else
+      - someone call the police i think the bot died
+      - sorry, i cannot rephrase
+      - sudo make me a sandwich
+      - tell me about yourself
+      - tell me more about next best action
+      - that doesn't sound like a joke
+      - that link doesn't work!
+      - the one that is better than you
+      - tricked  ya
+      - turn off my stove
+      - umm
+      - wait a bit i am still reading
+      - what about wheather
+      - what are contextual AI assistants and how different are they from chatbots?
+      - what are you doing now?
+      - what are your uses for universities
+      - what did you eat for lunch?
+      - what do oyu think about siri?
+      - what do you think abou siri?
+      - what do you think of alexa
+      - what does your soul feel my friend
+      - what doing
+      - what else?
+      - what films do you like
+      - what i do after cd starter-pack-rasa-stack?
+      - what is a discourse?
+      - what is a mascot
+      - what is adlingo
+      - what is differance between bot and mascot?
+      - what is evolution ?
+      - what is google rcs
+      - what is machine learning
+      - what is nice?
+      - what is the capital of delhi
+      - what is the capital of india
+      - what is the current petrol price
+      - what is the day ?
+      - what is the real use case where we can use this one
+      - what is your address?
+      - what is your purpose
+      - what lnu mean?
+      - what the latest news ?
+      - what you ate today?
+      - what's 5 + 5
+      - what's a newsletter?
+      - what's gingerale
+      - what's your wife doing this weekend
+      - what?
+      - whats that
+      - whats the sign
+      - when is the next train is coming?
+      - where do i get install files for mac?
+      - where is Oslo?
+      - where is mexico?
+      - wheres the party?
+      - which city are you talking about?
+      - which email
+      - which email should i send to ?
+      - which file is created first while developing chat bot
+      - which is the LNU asynchronism ?
+      - which kind
+      - who are the engineers at rasa?
+      - who are they?
+      - who is the MD of samsung bangalore ?
+      - who is the president of india ?
+      - who is your favourite robot?
+      - who let the dog out
+      - who was hitler
+      - who will anser my email?
+      - who's Bill Gates?
+      - whta you think about gdpr?
+      - why do you need that?
+      - why its called rasa ?
+      - will u kill me
+      - will u kill me?
+      - winter is already leaving
+      - with you recommend me?
+      - would you like some water
+      - yeah, my dog was drinking a couple of litres of water per day and tried drinking the swimming pool
+      - you already have that
+      - you can learn how to make a coffe
+      - you have children?
+      - you have job opening
+      - you lock sweety
+      - you should learn to count
+      - you will know it from the single red rose it carries between its teeth
+      - you're a woman
+      - CALL THE POLICE
+      - tertyryutyi
+      - wsdrcftvgybhnj
+      - why sky is blue?
+      - what kind of bird are you?
+      - contextua
+      - contextual
+      - talk to me about voulette
+      - voulette voulette
+      - Do you have a demo?
+      - Cars
+      - please voulette
+      - Out of scope question.
+      - i need money
+      - no, i need cash, money! Do you have it ?
+      - the beatles
+      - Hi i want to go palghar
+      - I want to go palghar
+      - your contry name
+      - you girl
+      - gsaf
+      - expert of rasa
+      - i want play ball
+      - flight catch up
+      - how do you like your coffee
+      - Can you get analytics on who I'm chatting with when I use Rasa
+      - coronavirus
+      - have you heard of corona?
+      - where do i type in commandy
+      - where to type in commands
+      - kiss me
+      - you have to
+      - what type of bot?
+      - sfasd
+      - asdkjasdhjkasd
+      - j  bhbhj
+      - eshdtjfjfyk
+      - drhdtjfjfyj
+      - sudo reboot
+      - asdfgasd
+      - asdfgasdas

@@ -1,0 +1,687 @@
+version: "3.1"
+
+stories:
+
+- story: xin chào
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- story: tạm biệt
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: greet tạm biệt
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: goodbye
+  - action: utter_goodbye
+
+# Thiết kế tình huống tra cứu trong thư viện
+
+- story: tra cứu sách trong thư viện 
+  steps:
+  - intent: ask_tra_cuu_sach
+  - action: action_find_book
+
+- story: tra cứu sách trong thư viện 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_tra_cuu_sach
+  - action: action_find_book
+
+- story: tra cứu sách trong thư viện 3
+  steps:
+  - intent: ask_tra_cuu_sach
+  - action: action_find_book
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: tra cứu sách trong thư viện 4
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_tra_cuu_sach
+  - action: action_find_book
+  - intent: goodbye
+  - action: utter_goodbye
+
+# # Thiết kế tình huống câu mong muốn giúp đỡ
+
+- story: mong muốn bot giúp đỡ
+  steps:
+  - intent: ask_help
+  - action: utter_help
+
+- story: mong muốn bot giúp đỡ 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_help
+  - action: utter_help
+
+- story: mong muốn bot giúp đỡ 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_help
+  - action: utter_help
+  - intent: goodbye
+  - action: utter_goodbye
+  
+# ý định đóng cửa
+- story: ý định đóng cửa
+  steps:
+  - intent: ask_gio_dong_cua
+  - action: utter_gio_dong_cua
+
+- story: ý định đóng cửa 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_gio_dong_cua
+  - action: utter_gio_dong_cua
+  
+- story: ý định đóng cửa 3
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_gio_dong_cua
+  - action: utter_gio_dong_cua
+  - intent: goodbye
+  - action: utter_goodbye
+  
+- story: ý định đóng cửa 4
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_help
+  - action: utter_help
+  - intent: ask_gio_dong_cua
+  - action: utter_gio_dong_cua
+  - intent: goodbye
+  - action: utter_goodbye
+  
+- story: ý định đóng cửa 5
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_help
+  - action: utter_help
+  - intent: ask_tra_cuu_sach
+  - action: utter_tra_cuu_sach
+  - intent: ask_gio_dong_cua
+  - action: utter_gio_dong_cua
+  - intent: goodbye
+  - action: utter_goodbye
+
+# ý định mở cửa
+- story: ý định mở cửa 
+  steps:
+  - intent: ask_gio_mo_cua
+  - action: utter_gio_mo_cua
+
+- story: ý định mở cửa 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_gio_mo_cua
+  - action: utter_gio_mo_cua
+  
+- story: ý định đóng cửa 3
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_gio_mo_cua
+  - action: utter_gio_mo_cua
+  - intent: goodbye
+  - action: utter_goodbye
+  
+- story: ý định đóng cửa 4
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_help
+  - action: utter_help
+  - intent: ask_gio_mo_cua
+  - action: utter_gio_mo_cua
+  - intent: goodbye
+  - action: utter_goodbye
+  
+- story: ý định đóng cửa 5
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_help
+  - action: utter_help
+  - intent: ask_tra_cuu_sach
+  - action: utter_tra_cuu_sach
+  - intent: ask_gio_mo_cua
+  - action: utter_gio_mo_cua
+  - intent: goodbye
+  - action: utter_goodbye
+
+# ý định đóng và mở 
+
+- story: kết hợp giờ đóng và mở cửa 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_help
+  - action: utter_help
+  - intent: ask_tra_cuu_sach
+  - action: utter_tra_cuu_sach
+  - intent: ask_gio_mo_cua
+  - action: utter_gio_mo_cua
+  - intent: ask_gio_dong_cua
+  - action: utter_gio_dong_cua
+  - intent: goodbye
+  - action: utter_goodbye
+  
+- story: kết hợp giờ đóng và mở cửa 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_gio_mo_cua
+  - action: utter_gio_mo_cua
+  - intent: ask_gio_dong_cua
+  - action: utter_gio_dong_cua
+  - intent: goodbye
+  - action: utter_goodbye
+  
+# ý định làm mất sách
+- story: ý định làm mất sách
+  steps:
+  - intent: ask_lam_mat_sach
+  - action: utter_lam_mat_sach
+  
+- story: ý định làm mất sách 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_lam_mat_sach
+  - action: utter_lam_mat_sach
+  
+- story: ý định làm mất sách 3
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_lam_mat_sach
+  - action: utter_lam_mat_sach
+  - intent: ask_gio_mo_cua
+  - action: utter_gio_mo_cua
+  - intent: ask_gio_dong_cua
+  - action: utter_gio_dong_cua
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: ý định làm mất sách 3
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_lam_mat_sach
+  - action: utter_lam_mat_sach
+  - intent: goodbye
+  - action: utter_goodbye
+  
+- story: ý định làm mất sách 4
+  steps:
+  - intent: ask_lam_mat_sach
+  - action: utter_lam_mat_sach
+  - intent: goodbye
+  - action: utter_goodbye
+  
+# ý định đối tượng sử dụng thư viện
+
+- story: đối tượng sử dụng thư viện
+  steps:
+  - intent: ask_doi_tuong_su_dung
+  - action: utter_doi_tuong_su_dung
+  
+- story: đối tượng sử dụng thư viện 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_doi_tuong_su_dung
+  - action: utter_doi_tuong_su_dung
+  
+- story: đối tượng sử dụng thư viện 3
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_doi_tuong_su_dung
+  - action: utter_doi_tuong_su_dung
+  - intent: goodbye
+  - action: utter_goodbye
+  
+- story: đối tượng sử dụng thư viện 4
+  steps:
+  - intent: ask_doi_tuong_su_dung
+  - action: utter_doi_tuong_su_dung
+  - intent: goodbye
+  - action: utter_goodbye
+  
+# ý định liên hệ thư viện
+
+- story: ý định liên hệ thư viện
+  steps:
+  - intent: ask_thong_tin_lien_he
+  - action: utter_thong_tin_lien_he
+  
+- story: ý định liên hệ thư viện 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_thong_tin_lien_he
+  - action: utter_thong_tin_lien_he
+  
+- story: ý định liên hệ thư viện 3
+  steps:
+  - intent: ask_thong_tin_lien_he
+  - action: utter_thong_tin_lien_he
+  - intent: goodbye
+  - action: utter_goodbye
+  
+- story: ý định liên hệ thư viện 4
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_thong_tin_lien_he
+  - action: utter_thong_tin_lien_he
+  - intent: goodbye
+  - action: utter_goodbye
+  
+# ý định cơ cấu tổ chức
+- story: ý định cơ cấu tổ chức thư viện
+  steps:
+  - intent: ask_co_cau_to_chuc
+  - action: utter_co_cau_to_chuc
+  
+- story: ý định cơ cấu tổ chức thư viện 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_co_cau_to_chuc
+  - action: utter_co_cau_to_chuc
+  
+- story: ý định cơ cấu tổ chức thư viện 3
+  steps:
+  - intent: ask_co_cau_to_chuc
+  - action: utter_co_cau_to_chuc
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: ý định cơ cấu tổ chức thư viện 4
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_co_cau_to_chuc
+  - action: utter_co_cau_to_chuc
+  - intent: goodbye
+  - action: utter_goodbye
+  
+- story: ý định cơ cấu tổ chức thư viện 5
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_thong_tin_lien_he
+  - action: utter_thong_tin_lien_he
+  - intent: ask_co_cau_to_chuc
+  - action: utter_co_cau_to_chuc
+  - intent: goodbye
+  - action: utter_goodbye
+  
+- story: ý định cơ cấu tổ chức thư viện 6
+  steps:
+  - intent: ask_thong_tin_lien_he
+  - action: utter_thong_tin_lien_he
+  - intent: ask_co_cau_to_chuc
+  - action: utter_co_cau_to_chuc
+  
+# ý định hỏi bot có thể giúp được gì
+
+- story: ý định bot có thể giúp được gì
+  steps:
+  - intent: ask_bot_ho_tro
+  - action: utter_bot_ho_tro
+  
+- story: ý định bot có thể giúp được gì 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_bot_ho_tro
+  - action: utter_bot_ho_tro
+  
+- story: ý định bot có thể giúp được gì 3
+  steps:
+  - intent: ask_bot_ho_tro
+  - action: utter_bot_ho_tro
+  - intent: goodbye
+  - action: utter_goodbye
+  
+- story: ý định bot có thể giúp được gì 4
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_bot_ho_tro
+  - action: utter_bot_ho_tro
+  - intent: goodbye
+  - action: utter_goodbye
+  
+# ý định hỏi mượn sách
+
+- story: ý định hỏi mượn sách
+  steps:
+  - intent: ask_muon_sach
+  - action: utter_muon_sach
+  
+- story: ý định hỏi mượn sách 2
+  steps:
+  - intent: ask_muon_sach
+  - action: utter_muon_sach
+  - intent: goodbye
+  - action: utter_goodbye
+  
+- story: ý định hỏi mượn sách 3
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_muon_sach
+  - action: utter_muon_sach
+  - intent: goodbye
+  - action: utter_goodbye
+  
+- story: ý định hỏi mượn sách 4
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_muon_sach
+  - action: utter_muon_sach
+
+# ý định hỏi quy trình mượn sách
+- story: ý định hỏi mượn quy trình mượn sách
+  steps:
+  - intent: ask_quy_trinh_muon_sach
+  - action: utter_quy_trinh_muon_sach
+  
+- story: ý định hỏi mượn quy trình mượn sách
+  steps:
+  - intent: ask_muon_sach
+  - action: utter_muon_sach
+  - intent: ask_quy_trinh_muon_sach
+  - action: utter_quy_trinh_muon_sach
+
+# ý định phản hồi đăng ký của quy trình mượn sách
+- story: ý định phản hồi đăng ký mượn sách
+  steps:
+  - intent: ask_confirm_quy_dang_ky_muon_sach
+  - action: utter_confirm_quy_dang_ky_muon_sach
+
+- story: ý định phản hồi đăng ký mượn sách 2
+  steps:
+  - intent: ask_quy_trinh_muon_sach
+  - action: utter_quy_trinh_muon_sach
+  - intent: ask_confirm_quy_dang_ky_muon_sach
+  - action: utter_confirm_quy_dang_ky_muon_sach
+  
+# ý định hỏi vị trí thư viện
+- story: ý định hỏi vị trí của thư viện
+  steps: 
+  - intent: ask_vị_tri_thu_vien
+  - action: utter_vị_tri_thu_vien
+  
+- story: ý định hỏi vị trí của thư viện 2
+  steps: 
+  - intent: ask_confirm_quy_dang_ky_muon_sach
+  - action: utter_confirm_quy_dang_ky_muon_sach
+  - intent: ask_vị_tri_thu_vien
+  - action: utter_vị_tri_thu_vien
+
+  
+- story: ý định hỏi vị trí của thư viện 3
+  steps: 
+  - intent: ask_quy_trinh_muon_sach
+  - action: utter_quy_trinh_muon_sach
+  - intent: ask_confirm_quy_dang_ky_muon_sach
+  - action: utter_confirm_quy_dang_ky_muon_sach
+  - intent: ask_vị_tri_thu_vien
+  - action: utter_vị_tri_thu_vien
+  
+# ý định vị trí phòng đọc
+- story: ý định hỏi vị trí phòng đọc sách của thư viện 
+  steps: 
+  - intent: ask_vị_tri_phong_doc_sach
+  - action: utter_vi_tri_phong_doc_sach
+  
+- story: ý định hỏi vị trí phòng đọc sách của thư viện 2
+  steps: 
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_vị_tri_phong_doc_sach
+  - action: utter_vi_tri_phong_doc_sach
+  
+- story: ý định hỏi vị trí phòng đọc sách của thư viện 3
+  steps:
+  - intent: ask_vị_tri_phong_doc_sach
+  - action: utter_vi_tri_phong_doc_sach
+  - intent: goodbye
+  - action: utter_goodbye
+  
+- story: ý định hỏi vị trí phòng đọc sách của thư viện 4
+  steps: 
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_vị_tri_phong_doc_sach
+  - action: utter_vi_tri_phong_doc_sach
+  - intent: goodbye
+  - action: utter_goodbye
+  
+# Ý định hỏi quy định thư viện
+- story: ý định hỏi quy định thư viện
+  steps: 
+  - intent: ask_quy_dinh_thu_vien
+  - action: utter_quy_dinh_thu_vien
+  
+- story: ý định hỏi quy định thư viện 2
+  steps: 
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_quy_dinh_thu_vien
+  - action: utter_quy_dinh_thu_vien
+  
+- story: ý định hỏi quy định thư viện 3
+  steps:
+  - intent: ask_quy_dinh_thu_vien
+  - action: utter_quy_dinh_thu_vien
+  - intent: goodbye
+  - action: utter_goodbye
+  
+- story: ý định hỏi quy định thư viện 4
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_quy_dinh_thu_vien
+  - action: utter_quy_dinh_thu_vien
+  - intent: goodbye
+  - action: utter_goodbye
+
+# ý định hỏi về nội quy thư viện
+- story: ý định hỏi về quy định thư viện
+  steps: 
+  - intent: ask_help_quy_dinh
+  - action: utter_help_quy_dinh
+  
+- story: ý định hỏi về quy định thư viện 2
+  steps: 
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_help_quy_dinh
+  - action: utter_help_quy_dinh
+  
+- story: ý định hỏi về quy định thư viện 3
+  steps:
+  - intent: ask_help_quy_dinh
+  - action: utter_help_quy_dinh
+  - intent: goodbye
+  - action: utter_goodbye
+  
+- story: ý định hỏi về quy định thư viện 4
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_help_quy_dinh
+  - action: utter_help_quy_dinh
+  - intent: goodbye
+  - action: utter_goodbye
+
+# ý định cấm
+- story: ý định hỏi những đều cấm
+  steps:
+  - intent: ask_deu_cam
+  - action: utter_deu_cam
+
+- story: ý định hỏi những đều cấm 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_deu_cam
+  - action: utter_deu_cam
+
+- story: ý định hỏi những đều cấm 3
+  steps:
+  - intent: ask_deu_cam
+  - action: utter_deu_cam
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: ý định hỏi những đều cấm 4
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_deu_cam
+  - action: utter_deu_cam
+  - intent: goodbye
+  - action: utter_goodbye
+  
+  #ý định hỏi có thể mượn sách về nhà được không
+- story: ý định mượn sách về nhà
+  steps:
+  - intent: ask_muon_sach_ve_nha
+  - action: utter_muon_sach_ve_nha
+  
+- story: ý định mượn sách về nhà 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_muon_sach_ve_nha
+  - action: utter_muon_sach_ve_nha
+  
+- story: ý định mượn sách về nhà 3
+  steps:
+  - intent: ask_muon_sach_ve_nha
+  - action: utter_muon_sach_ve_nha
+  - intent: goodbye
+  - action: utter_goodbye
+  
+- story: ý định mượn sách về nhà 4
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_muon_sach_ve_nha
+  - action: utter_muon_sach_ve_nha
+  - intent: goodbye
+  - action: utter_goodbye
+ 
+# ý định về mức phí mượn sách
+- story: ý định mức về mức phí mượn sách
+  steps:
+  - intent: ask_muon_sach_ve_nha
+  - action: utter_muon_sach_ve_nha
+
+- story: ý định mức về mức phí mượn sách 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_muon_sach_ve_nha
+  - action: utter_muon_sach_ve_nha
+  
+- story: ý định mức về mức phí mượn sách 3
+  steps:
+  - intent: ask_muon_sach_ve_nha
+  - action: utter_muon_sach_ve_nha
+  - intent: goodbye
+  - action: utter_goodbye
+  
+- story: ý định mức về mức phí mượn sách 4
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_muon_sach_ve_nha
+  - action: utter_muon_sach_ve_nha
+  - intent: goodbye
+  - action: utter_goodbye
+  
+# Thời gian mượn sách của thư viện
+- story: thời gian mượn sách của thư viện
+  steps:
+  - intent: ask_thoi_gian_muon_sach
+  - action: utter_thoi_gian_muon_sach
+  
+- story: thời gian mượn sách của thư viện 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_thoi_gian_muon_sach
+  - action: utter_thoi_gian_muon_sach
+  
+- story: thời gian mượn sách của thư viện 3
+  steps:
+  - intent: ask_thoi_gian_muon_sach
+  - action: utter_thoi_gian_muon_sach
+  - intent: goodbye
+  - action: utter_goodbye
+  
+- story: thời gian mượn sách của thư viện 4
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_thoi_gian_muon_sach
+  - action: utter_thoi_gian_muon_sach
+  - intent: goodbye
+  - action: utter_goodbye
+  
+# ý định chào hỏi có tên
+
+- story: xin chào có có kèm theo tên 
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: answer_name
+  - action: utter_greet_with_name
+
+# ý định trả sách
+- story: hỏi về quy định viec xu ly khi tra sach
+  steps:
+  - intent: ask_tra_sach
+  - action: utter_tra_sach
+
+# ý định danh mục
+- story: ý định về danh mục
+  steps:
+  - intent: ask_danh_muc
+  - action: utter_danh_muc
+
+# ý định về quá thời trả sách
+- story: câu chuyện về quá thời trả sách
+  steps:
+  - intent: ask_qua_thoi_han_tra_sach
+  - action: utter_qua_thoi_han_tra_sach
+  
+#ý định gia hạn trả sách
+# - story: câu chuyện về gia hạn trả sách
+#   steps:
+#   - intent: ask_gia_han_tra_sach
+#   - action: utter_gia_han_tra_sach

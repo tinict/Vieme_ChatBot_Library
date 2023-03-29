@@ -1,0 +1,255 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - answer_name
+  - affirm
+  - ask_tra_cuu_sach
+  - ask_help
+  - ask_gio_dong_cua
+  - ask_gio_mo_cua
+  - ask_lam_mat_sach
+  - ask_doi_tuong_su_dung
+  - ask_thong_tin_lien_he
+  - ask_co_cau_to_chuc
+  - ask_bot_ho_tro
+  - ask_muon_sach
+  - ask_quy_trinh_muon_sach
+  - ask_confirm_quy_dang_ky_muon_sach
+  - ask_vị_tri_thu_vien
+  - ask_vị_tri_phong_doc_sach
+  - ask_quy_dinh_thu_vien
+  - ask_help_quy_dinh
+  - ask_deu_cam
+  - ask_muon_sach_ve_nha
+  - ask_muc_phi_muon_sach
+  - ask_thoi_gian_muon_sach
+  - ask_danh_muc
+  - ask_qua_thoi_han_tra_sach
+  - ask_tra_sach
+  - ask_gia_han_tra_sach
+
+entities:
+  - name_book
+  - struct
+  - user_name
+  - cus_sex
+  - category_name
+  - name_author
+
+slots:
+  name:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: name_book
+    - type: from_entity
+      entity: user_name
+    - type: from_entity
+      entity: cus_sex
+    - type: from_entity
+      entity: category_name
+  author:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: name_author
+
+actions:
+  - action_find_book
+
+responses:
+  utter_greet:
+  - text: "Xin chào bạn, mình trợ lý ảo của thư viện tên VieLib thuộc sử hữu của trường Đại Học Khoa Học"
+  - text: "Xin chào bạn, mình trợ lý ảo của thư viện tên VieLib tôi rất vui khi biết bạn"
+  - text: "Xin chào bạn, mình trợ lý ảo của thư viện tên tôi VieLib"
+  - text: "Xin chào bạn, mình trợ lý ảo của thư viện tên tôi VieLib"
+  - text: "Tên tôi là VieLib trợ lý thư viện. Xin chào bạn !"
+  - text: "VieLib xin chào, tôi có thể giúp gì được cho bạn"
+  - text: "Hello, tên tôi là VieLib"
+  
+  utter_greet_with_name:
+  - text: "Xin chào {name}!\n{name} cần Bot giúp gì không?"
+  
+  utter_goodbye_with_name:
+  - text: "Tạm biệt {name}!\nHãy quay lại với Bot khi {name} cần nhé!"
+
+  utter_goodbye:
+  - text: "Chào tạm biệt!"
+  - text: "Hẹn gặp lại bạn"
+  - text: "Bye"
+  - text: "Tạm biệt bạn!"
+  - text: "Good Bye"
+  - text: "Xin chào tạm biệt bạn"
+  - text: "Hẹn gặp lại vào lần tới"
+  - text: "Bye Bye"
+  - text: "Tạm biêt, mong được giúp được bạn vào lần tới"
+
+  utter_tra_cuu_sach:
+  - text: "Có phải bạn đang tìm kiếm sách {name} của tác giả {author}"
+
+  utter_help:
+  - text: "Tôi sẵn sàng giúp đỡ bạn"
+  - text: "Bạn có thể đặt câu hỏi cho tôi. Tôi sẽ giúp bạn giải quyết"
+  - text: "Bạn có thắc mắc gì về thư viện, bạn có thể hỏi tôi"
+  - text: "Tôi là trợ lý ảo của thư viện. Tôi sẵn sàng tiếp nhận mọi câu hỏi"
+  - text: "Bạn mạnh dạng hỏi đi tôi sẽ trả lời"
+  - text: "Hãy đặt câu hỏi cho tôi"
+  - text: "Bạn có thể đặt ra câu hỏi nếu thắc mắc"
+
+  utter_gio_dong_cua:
+  - text: "Sau 5h chiều các ngày trong tuần từ thứ 2 đến thứ 7. Chủ nhật thư viện không mở cửa."
+  
+  utter_gio_mo_cua:
+  - text: "Vào tất cả các ngày trong tuần, từ thứ 2 đến thứ 7. Sáng: Từ 7h -> 11h. Chiều: Từ 13h30h đến 17h."
+  
+  utter_lam_mat_sach:
+  - text: "Theo quy định của trung tâm thư viện, bạn phải đền tài liệu/ sách đó.\n
+            1. Đền bằng tiền: đền gấp 5 lần giá của tài liệu bị mất tại thời điểm hiện tại (không theo giá trang bìa)\n
+            2. Đền bằng sách: đền tài liệu cùng nhan đề, cùng tác giả, cùng nhà xuất bản, năm xuất bản mới nhất\n
+            3. Đền bằng tài liệu mà Trung tâm đang cần\n
+            4. Bạn đọc phải nộp tiền xử lý kỹ thuật: 5.000 đ/1 cuốn"
+  
+  utter_doi_tuong_su_dung:
+  - text: "Nếu bạn là sinh viên của trường là được phép vào thư viện nha \n
+           Theo tôi biết ngoài ra:\n 
+            + Cán bộ\n
+            + Giảng viên\n
+            + Học sinh khối chuyên\n
+            + Sinh viên thuộc Đại Học Huế quản lý\n 
+           là đối tượng có thể sử dụng thư viện trường mình nhé!\n"
+  
+  utter_thong_tin_lien_he:
+  - text: "Bạn có thể liên lạc qua:\n
+            - Điện thoại 0234.3822440 hoặc 0234.3822447 \n
+            - Email thuviendhkh@gmail.com.\n
+            - Liên hệ trực tiếp với nhân viên ở các phòng của trung tâm thư viện."
+       
+  utter_co_cau_to_chuc:
+  - text: "Cơ cấu tổ chức:\n
+            + Giám đốc là người đứng đầu quản lý tổ lưu hành\n
+            + Tổ phân loại biên mục\n
+            + Tổ tài nguyên thông tin điều hành mạng.\n
+          đây là những thông tin tôi biết về thư viện trường ta!"
+  
+  utter_bot_ho_tro:
+  - text: "Tôi có thể giúp bạn giải quyết vấn đề về thư viện như sau:\n
+            1. Tra cứu sách \n
+            2. Vấn đề đăng ký mượn sách \n
+            3. Đăng ký làm thể thư viện \n
+            4. Các nghiệp vụ khác của thư viện \n
+            5. Quy định của thư viện\n
+            6. Kiểm tra thẻ còn hạn\n
+            7. Kiểm tra thông tin sách mượn"
+            
+  utter_muon_sach:
+  - text: "Bạn đang muốn mượn lĩnh vực hay chuyển ngành nào?"
+  - text: "Thư viện có nhiều lĩnh vực không biết bạn chọn lĩnh vực nào?"
+  - text: "Quyển sách bạn đang có ý chọn thuộc lĩnh vực nào?"
+  - text: "Lĩnh vực nào mà bạn đang muốn chọn?"
+  
+  utter_quy_trinh_muon_sach:
+  - text: "Quy trình mượn sách từ thư viện như sau:\n
+            + Trường hợp bạn muốn đăng ký offline tới trực tiếp thư viện:\n
+                1. Trình thẻ sinh viện\n
+                2. Đọc quyển sách cần mượn với thủ thư\n
+                3. Tiến hành đăng ký mượn từ ngày đến ngày\n
+                4. Điển vào phiếu mượn thông tin cá nhân người mượn\n
+            + Trường hợp bạn muốn đăng ký online:\n
+                1. Bạn có thể đăng ký với VieLib\n
+                2. Bạn chỉ cần nhắn ý định đăng ký sách\n
+                3. Hoàn thành form đăng ký mượn\n
+                4. Lên trường đọc mã sinh viện có thể nhận sách đã đăng ký online\n
+            không biết bạn có ý định mượn sách online hay offline."
+            
+  utter_confirm_quy_dang_ky_muon_sach:
+  - text: "Vậy bạn chọn đăng ký Online ha"
+  - text: "Bạn chốt đăng ký Online đi phải không"
+  
+  utter_vị_tri_thu_vien:
+  - text: "Vị trí của thư viện nằm ở dãy E, nếu:\n
+            1. Mượn sách giáo trình, vị trí: tầng 4\n
+            2. Mượn tài liệu tiếng việt, vị trí: tầng 3\n
+            3. Mượn tài liệu tra cứu, báo, tạp chí, vị trí: tầng 2\n
+            4. Mượn tài liệu nước ngoài, vị trí: tầng 4\n"
+            
+  utter_vi_tri_phong_doc_sach:
+  - text: "Phòng đọc sách của thư viện trường nằm ở tầng 2, dãy nhà K"
+  - text: "Phòng đọc của thư viện trường nằm dãy nhà K, tầng 2"
+  
+  utter_quy_dinh_thu_vien:
+  - text: "Quy định của thư viện đề ra như sau:\n
+            + Điều 1: Đối tượng được vào thư viện\n
+            + Điều 2: Quy định cá nhân khi vào thư viện\n
+            + Điều 3: Trách nhiệm của người dùng\n
+            + Điều 4: Bảo đảm thông tin tài liệu thư viện\n
+            + Điều 5: Quy định về gây tổn hại tài liệu\n
+            + Điều 6: Tuân thủ tính bản quyền tài liệu\n
+            + Điều 7: Tùy vào mức độ và hành vi có hình thức kỹ luật"
+  
+  utter_help_quy_dinh:
+  - text: "Thư viện trường có quy định và nội quy"
+  - text: "Có, bạn có thể xem qua nội quy thư viện"
+  - text: "Trường có nội quy thư viện"
+  
+  utter_deu_cam:
+  - text: "Những đều cấm khi vào thư viện theo quy định trường:\n
+            1. Không mang vũ khí quân dụng, chất gây cháy nổ vào thư viện\n
+            2. Không gây ồn ào, la hét, gây mất trật tự\n
+            3. Không hút thuốc bên trong thư viện\n
+            4. Không mang thức ăn nước uống vào thư viện\n
+            5. Không sử dụng chất kích thích bên trong thư viện\n
+            7. Không gây thất thoát, làm hỏng đồ thư viện\n
+            8. Không vẽ bậy và hoặc phá hoại tác phẩm\n"
+  
+  utter_muon_sach_ve_nha:
+  - text: "Những tài liệu được mượn về nhà:\n
+            1. Tài liệu tại kho tiếng Việt\n
+            2. Giáo Trình\n
+            3. Kho tài liệu tiếng Nước ngoài,...\n
+          theo thông tin tôi được biết từ thư viện nhưng không được sao chép tài liệu."
+  
+  utter_mucphi_muon_sach:
+  - text: "Thư viện, không thu phí mượn sách nha !"
+  - text: "Nếu mướn sách trong thời hạn sẽ không tín phí"
+            
+  utter_thoi_gian_muon_sach:
+  - text: "Thời gian mượn sách tính từ ngày bắt đầu mượn sách như sau:\n
+            + Bạn đọc được mượn từ 1- 3 cuốn/1 lần trong thời gian 2 tháng.\n
+            + Tài liệu kho tiếng nước ngoài: Bạn đọc có thể tự do vào kho lựa chọn tài liệu hoặc thông qua thủ thư, khi đã có tài liệu cần mượn, điền thông tin vào phiếu đăng ký phía sau sách. Thủ thư lưu phiếu đăng ký cùng thẻ thư viện vào ngăn cho mượn.Bạn đọc được mượn 1 cuốn/1 lần trong thời gian 7 ngày."
+  
+  utter_danh_muc:
+  - text: "Tôi không biết đây có phải danh mục {name} bạn đang tìm kiếm không vậy ?"
+  
+  utter_tra_sach:
+  - text: "Quy trình trả sách như sau:\n
+            Đưa tài liệu cần trả cho thủ thư, thủ thư làm thủ tục trả qua phân hệ lưu thông(kho Tiếng Việt, Giáo trình) hoặc thủ thư
+            xác định tài liệu đã mượn qua phiếu đăng ký và thẻ thư viện còn giữ, nếu đúng thì cho trả tài liệu 
+            đồng thời trả thẻ thư viện lại cho bạn đọc (kho tài liệu tiếng Nước ngoài)."
+       
+  utter_qua_thoi_han_tra_sach:
+  - text: "Quá thời hạn bị phạt: 2000đ/1 cuốn/ 1 ngày quá hạn."
+  
+  utter_please_rephrase:
+  - text: "Tôi xin lỗi, tôi không hiểu ý định của bạn đang nói"
+
+  utter_default:
+  - text: "Tôi chỉ có thể trả lời các câu hỏi liên quan đến thư viện."
+
+  utter_out_of_scope/non_english:
+  - text: "Tôi chỉ giải đáp các vấn đề liên quan đến thư viện."
+
+  utter_out_of_scope/other:
+  - text: "Tôi chỉ giải đáp các vấn đề liên quan đến thư viện. Xin lỗi."
+
+  utter_ask_rephrase:
+  - text: "Bạn có thể hỏi lại không?"
+  
+  utter_gia han_tra_sach:
+  - text: "Bạn đọc được gia hạn 2 lần khi chưa đọc xong tài liệu"
+  
+  
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
